@@ -1,0 +1,531 @@
+
+
+============================== 2022-11-30 21:57:05.278386 | 65011b94-4722-47b3-9864-a96d8e0daab7 ==============================
+[0m21:57:05.278399 [info ] [MainThread]: Running with dbt=1.3.1
+[0m21:57:05.278631 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/claytonvanhovel/Desktop/onward-materialize-dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'project_name': 'onward-materialize', 'skip_profile_setup': False, 'which': 'init', 'indirect_selection': 'eager'}
+[0m21:57:05.278722 [debug] [MainThread]: Tracking: tracking
+[0m21:57:05.304607 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f982859dc60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f982859c6d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f982859ceb0>]}
+[0m21:57:05.305510 [info ] [MainThread]: Setting up your profile.
+[0m21:57:36.600694 [info ] [MainThread]: No sample profile found for materialize.
+[0m21:57:36.601034 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f985a19b5b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f985a199a50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f985a19ac80>]}
+[0m21:57:36.601212 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2022-11-30 22:00:20.334156 | 17ff1ee8-e84c-4c57-83be-eca5afe2b090 ==============================
+[0m22:00:20.334170 [info ] [MainThread]: Running with dbt=1.3.1
+[0m22:00:20.334610 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/claytonvanhovel/Desktop/onward-materialize-dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'project_name': 'onward-materialize', 'skip_profile_setup': False, 'which': 'init', 'indirect_selection': 'eager'}
+[0m22:00:20.334706 [debug] [MainThread]: Tracking: tracking
+[0m22:00:20.363208 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fca886b5cc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fca886b6050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fca886b6ce0>]}
+[0m22:00:20.364315 [info ] [MainThread]: Setting up your profile.
+[0m22:00:21.816692 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fca886b5240>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fca886b4430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fca5815fcd0>]}
+[0m22:00:21.816944 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2022-11-30 22:01:20.796820 | cbb9001b-851b-4868-baf4-3f63967ad9ba ==============================
+[0m22:01:20.796833 [info ] [MainThread]: Running with dbt=1.3.1
+[0m22:01:20.797228 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/claytonvanhovel/Desktop/onward-materialize-dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'config_dir': True, 'which': 'debug', 'indirect_selection': 'eager'}
+[0m22:01:20.797321 [debug] [MainThread]: Tracking: tracking
+[0m22:01:20.822282 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe64a6f6fe0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe64a6f77c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe64a6f7400>]}
+[0m22:01:20.823286 [info ] [MainThread]: To view your profiles.yml file, run:
+
+open /Users/claytonvanhovel/Desktop/onward-materialize-dbt
+[0m22:01:20.823692 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe64a6f77c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe64a6f7400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe64a6f7df0>]}
+[0m22:01:20.823845 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2022-11-30 23:40:37.116530 | 344d003c-87fe-49e4-ae60-417174748ba9 ==============================
+[0m23:40:37.116541 [info ] [MainThread]: Running with dbt=1.3.1
+[0m23:40:37.116939 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/claytonvanhovel/Desktop/onward-materialize-dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'config_dir': True, 'which': 'debug', 'indirect_selection': 'eager'}
+[0m23:40:37.117046 [debug] [MainThread]: Tracking: tracking
+[0m23:40:37.153121 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f82a221ee90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f82a221f850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f82a221f1f0>]}
+[0m23:40:37.154074 [info ] [MainThread]: To view your profiles.yml file, run:
+
+open /Users/claytonvanhovel/Desktop/onward-materialize-dbt
+[0m23:40:37.154432 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f82a221f850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f82a221f1f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f82a221fe50>]}
+[0m23:40:37.154572 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2022-11-30 23:43:19.468005 | cd9b6005-bb63-4c9e-a6da-869d15f7311a ==============================
+[0m23:43:19.468017 [info ] [MainThread]: Running with dbt=1.3.1
+[0m23:43:19.468420 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/claytonvanhovel/Desktop/onward-materialize-dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'config_dir': True, 'which': 'debug', 'indirect_selection': 'eager'}
+[0m23:43:19.468516 [debug] [MainThread]: Tracking: tracking
+[0m23:43:19.494763 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc9294ceb00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc9294cf250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc9294cedd0>]}
+[0m23:43:19.495847 [info ] [MainThread]: To view your profiles.yml file, run:
+
+open /Users/claytonvanhovel/Desktop/onward-materialize-dbt
+[0m23:43:19.496131 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc9294cf250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc9294cedd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc9294cf820>]}
+[0m23:43:19.496281 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2022-11-30 23:47:59.009637 | 31873c44-4c7a-4d9b-8fc9-35a36fea41c6 ==============================
+[0m23:47:59.009703 [info ] [MainThread]: Running with dbt=1.3.1
+[0m23:47:59.011006 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/claytonvanhovel/Desktop/onward-materialize-dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m23:47:59.011152 [debug] [MainThread]: Tracking: tracking
+[0m23:47:59.051867 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe4ea2fa830>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe4ea2f8e80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe4ea2fa950>]}
+[0m23:47:59.064680 [info ] [MainThread]: Partial parse save file not found. Starting full parse.
+[0m23:47:59.064918 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '31873c44-4c7a-4d9b-8fc9-35a36fea41c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe4ea2f8fd0>]}
+[0m23:47:59.081406 [debug] [MainThread]: Parsing macros/mz_generate_name.sql
+[0m23:47:59.082992 [debug] [MainThread]: Parsing macros/catalog.sql
+[0m23:47:59.084283 [debug] [MainThread]: Parsing macros/adapters.sql
+[0m23:47:59.091152 [debug] [MainThread]: Parsing macros/materializations/materialized_view.sql
+[0m23:47:59.093290 [debug] [MainThread]: Parsing macros/materializations/test.sql
+[0m23:47:59.096343 [debug] [MainThread]: Parsing macros/materializations/seed.sql
+[0m23:47:59.102483 [debug] [MainThread]: Parsing macros/materializations/view.sql
+[0m23:47:59.104542 [debug] [MainThread]: Parsing macros/materializations/source.sql
+[0m23:47:59.106545 [debug] [MainThread]: Parsing macros/materializations/table.sql
+[0m23:47:59.108522 [debug] [MainThread]: Parsing macros/materializations/sink.sql
+[0m23:47:59.110447 [debug] [MainThread]: Parsing macros/materializations/incremental.sql
+[0m23:47:59.111035 [debug] [MainThread]: Parsing macros/timestamps.sql
+[0m23:47:59.112190 [debug] [MainThread]: Parsing macros/catalog.sql
+[0m23:47:59.113636 [debug] [MainThread]: Parsing macros/relations.sql
+[0m23:47:59.114546 [debug] [MainThread]: Parsing macros/adapters.sql
+[0m23:47:59.130474 [debug] [MainThread]: Parsing macros/materializations/incremental_strategies.sql
+[0m23:47:59.131172 [debug] [MainThread]: Parsing macros/materializations/snapshot_merge.sql
+[0m23:47:59.132205 [debug] [MainThread]: Parsing macros/utils/dateadd.sql
+[0m23:47:59.132578 [debug] [MainThread]: Parsing macros/utils/listagg.sql
+[0m23:47:59.133494 [debug] [MainThread]: Parsing macros/utils/datediff.sql
+[0m23:47:59.138363 [debug] [MainThread]: Parsing macros/utils/any_value.sql
+[0m23:47:59.138660 [debug] [MainThread]: Parsing macros/utils/last_day.sql
+[0m23:47:59.139433 [debug] [MainThread]: Parsing macros/utils/split_part.sql
+[0m23:47:59.140075 [debug] [MainThread]: Parsing macros/materializations/hooks.sql
+[0m23:47:59.142446 [debug] [MainThread]: Parsing macros/materializations/configs.sql
+[0m23:47:59.143868 [debug] [MainThread]: Parsing macros/materializations/snapshots/snapshot_merge.sql
+[0m23:47:59.144898 [debug] [MainThread]: Parsing macros/materializations/snapshots/strategies.sql
+[0m23:47:59.155608 [debug] [MainThread]: Parsing macros/materializations/snapshots/helpers.sql
+[0m23:47:59.164394 [debug] [MainThread]: Parsing macros/materializations/snapshots/snapshot.sql
+[0m23:47:59.172263 [debug] [MainThread]: Parsing macros/materializations/tests/test.sql
+[0m23:47:59.175124 [debug] [MainThread]: Parsing macros/materializations/tests/helpers.sql
+[0m23:47:59.176245 [debug] [MainThread]: Parsing macros/materializations/tests/where_subquery.sql
+[0m23:47:59.177368 [debug] [MainThread]: Parsing macros/materializations/models/incremental/column_helpers.sql
+[0m23:47:59.182555 [debug] [MainThread]: Parsing macros/materializations/models/incremental/merge.sql
+[0m23:47:59.192907 [debug] [MainThread]: Parsing macros/materializations/models/incremental/is_incremental.sql
+[0m23:47:59.193884 [debug] [MainThread]: Parsing macros/materializations/models/incremental/strategies.sql
+[0m23:47:59.198138 [debug] [MainThread]: Parsing macros/materializations/models/incremental/incremental.sql
+[0m23:47:59.204984 [debug] [MainThread]: Parsing macros/materializations/models/incremental/on_schema_change.sql
+[0m23:47:59.216132 [debug] [MainThread]: Parsing macros/materializations/models/table/table.sql
+[0m23:47:59.219699 [debug] [MainThread]: Parsing macros/materializations/models/table/create_table_as.sql
+[0m23:47:59.221820 [debug] [MainThread]: Parsing macros/materializations/models/view/view.sql
+[0m23:47:59.225408 [debug] [MainThread]: Parsing macros/materializations/models/view/helpers.sql
+[0m23:47:59.226180 [debug] [MainThread]: Parsing macros/materializations/models/view/create_or_replace_view.sql
+[0m23:47:59.228278 [debug] [MainThread]: Parsing macros/materializations/models/view/create_view_as.sql
+[0m23:47:59.229668 [debug] [MainThread]: Parsing macros/materializations/seeds/seed.sql
+[0m23:47:59.234206 [debug] [MainThread]: Parsing macros/materializations/seeds/helpers.sql
+[0m23:47:59.246263 [debug] [MainThread]: Parsing macros/get_custom_name/get_custom_alias.sql
+[0m23:47:59.247162 [debug] [MainThread]: Parsing macros/get_custom_name/get_custom_schema.sql
+[0m23:47:59.248688 [debug] [MainThread]: Parsing macros/get_custom_name/get_custom_database.sql
+[0m23:47:59.249619 [debug] [MainThread]: Parsing macros/generic_test_sql/relationships.sql
+[0m23:47:59.250165 [debug] [MainThread]: Parsing macros/generic_test_sql/not_null.sql
+[0m23:47:59.250652 [debug] [MainThread]: Parsing macros/generic_test_sql/unique.sql
+[0m23:47:59.251071 [debug] [MainThread]: Parsing macros/generic_test_sql/accepted_values.sql
+[0m23:47:59.251897 [debug] [MainThread]: Parsing macros/etc/statement.sql
+[0m23:47:59.255191 [debug] [MainThread]: Parsing macros/etc/datetime.sql
+[0m23:47:59.260551 [debug] [MainThread]: Parsing macros/utils/except.sql
+[0m23:47:59.261033 [debug] [MainThread]: Parsing macros/utils/replace.sql
+[0m23:47:59.261789 [debug] [MainThread]: Parsing macros/utils/concat.sql
+[0m23:47:59.262367 [debug] [MainThread]: Parsing macros/utils/length.sql
+[0m23:47:59.262920 [debug] [MainThread]: Parsing macros/utils/dateadd.sql
+[0m23:47:59.263669 [debug] [MainThread]: Parsing macros/utils/intersect.sql
+[0m23:47:59.264159 [debug] [MainThread]: Parsing macros/utils/escape_single_quotes.sql
+[0m23:47:59.264779 [debug] [MainThread]: Parsing macros/utils/right.sql
+[0m23:47:59.265510 [debug] [MainThread]: Parsing macros/utils/listagg.sql
+[0m23:47:59.266945 [debug] [MainThread]: Parsing macros/utils/datediff.sql
+[0m23:47:59.267688 [debug] [MainThread]: Parsing macros/utils/safe_cast.sql
+[0m23:47:59.268324 [debug] [MainThread]: Parsing macros/utils/hash.sql
+[0m23:47:59.268952 [debug] [MainThread]: Parsing macros/utils/cast_bool_to_text.sql
+[0m23:47:59.269563 [debug] [MainThread]: Parsing macros/utils/any_value.sql
+[0m23:47:59.270116 [debug] [MainThread]: Parsing macros/utils/position.sql
+[0m23:47:59.270763 [debug] [MainThread]: Parsing macros/utils/literal.sql
+[0m23:47:59.271308 [debug] [MainThread]: Parsing macros/utils/data_types.sql
+[0m23:47:59.276960 [debug] [MainThread]: Parsing macros/utils/array_concat.sql
+[0m23:47:59.277619 [debug] [MainThread]: Parsing macros/utils/bool_or.sql
+[0m23:47:59.278179 [debug] [MainThread]: Parsing macros/utils/last_day.sql
+[0m23:47:59.279254 [debug] [MainThread]: Parsing macros/utils/split_part.sql
+[0m23:47:59.280595 [debug] [MainThread]: Parsing macros/utils/date_trunc.sql
+[0m23:47:59.281222 [debug] [MainThread]: Parsing macros/utils/array_construct.sql
+[0m23:47:59.282119 [debug] [MainThread]: Parsing macros/utils/array_append.sql
+[0m23:47:59.282750 [debug] [MainThread]: Parsing macros/adapters/schema.sql
+[0m23:47:59.284021 [debug] [MainThread]: Parsing macros/adapters/timestamps.sql
+[0m23:47:59.286135 [debug] [MainThread]: Parsing macros/adapters/indexes.sql
+[0m23:47:59.288029 [debug] [MainThread]: Parsing macros/adapters/relation.sql
+[0m23:47:59.297573 [debug] [MainThread]: Parsing macros/adapters/freshness.sql
+[0m23:47:59.298793 [debug] [MainThread]: Parsing macros/adapters/apply_grants.sql
+[0m23:47:59.307334 [debug] [MainThread]: Parsing macros/adapters/persist_docs.sql
+[0m23:47:59.310097 [debug] [MainThread]: Parsing macros/adapters/metadata.sql
+[0m23:47:59.314602 [debug] [MainThread]: Parsing macros/adapters/columns.sql
+[0m23:47:59.320785 [debug] [MainThread]: Parsing macros/python_model/python.sql
+[0m23:47:59.324622 [debug] [MainThread]: Parsing tests/generic/builtin.sql
+[0m23:47:59.503863 [debug] [MainThread]: 1699: static parser successfully parsed sources/driver_location.sql
+[0m23:47:59.549056 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.my_new_project.example
+
+[0m23:47:59.552531 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '31873c44-4c7a-4d9b-8fc9-35a36fea41c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe4f8853700>]}
+[0m23:47:59.557586 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '31873c44-4c7a-4d9b-8fc9-35a36fea41c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe4ea2f00d0>]}
+[0m23:47:59.557787 [info ] [MainThread]: Found 1 model, 0 tests, 0 snapshots, 0 analyses, 307 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+[0m23:47:59.557948 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '31873c44-4c7a-4d9b-8fc9-35a36fea41c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe4ea3c1e40>]}
+[0m23:47:59.558817 [info ] [MainThread]: 
+[0m23:47:59.559223 [debug] [MainThread]: Acquiring new materialize connection "master"
+[0m23:47:59.559858 [debug] [ThreadPool]: Acquiring new materialize connection "list_materialize"
+[0m23:47:59.567367 [debug] [ThreadPool]: Using materialize connection "list_materialize"
+[0m23:47:59.567527 [debug] [ThreadPool]: On list_materialize: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "connection_name": "list_materialize"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m23:47:59.567616 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:48:01.268607 [debug] [ThreadPool]: SQL status: SELECT 5 in 1.7 seconds
+[0m23:48:01.276785 [debug] [ThreadPool]: On list_materialize: Close
+[0m23:48:01.279315 [debug] [ThreadPool]: Acquiring new materialize connection "list_materialize_public"
+[0m23:48:01.287109 [debug] [ThreadPool]: Using materialize connection "list_materialize_public"
+[0m23:48:01.287343 [debug] [ThreadPool]: On list_materialize_public: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "connection_name": "list_materialize_public"} */
+select
+        d.name as database,
+        s.name as schema,
+        o.name,
+        case when o.type = 'materialized-view' then 'materializedview' else o.type end as type
+    from mz_objects o
+    join mz_schemas s on o.schema_id = s.id and s.name = 'public'
+    join mz_databases d on s.database_id = d.id and d.name = 'materialize'
+    where type in ('table', 'source', 'view', 'materialized-view', 'index', 'sink')
+  
+[0m23:48:01.287499 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m23:48:02.963345 [debug] [ThreadPool]: SQL status: SELECT 2 in 1.68 seconds
+[0m23:48:02.968985 [debug] [ThreadPool]: On list_materialize_public: Close
+[0m23:48:02.970631 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '31873c44-4c7a-4d9b-8fc9-35a36fea41c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe4f883fa90>]}
+[0m23:48:02.971465 [info ] [MainThread]: Concurrency: 1 threads (target='prod')
+[0m23:48:02.971783 [info ] [MainThread]: 
+[0m23:48:02.978615 [debug] [Thread-1 (]: Began running node model.onward_materialize.driver_location
+[0m23:48:02.979038 [info ] [Thread-1 (]: 1 of 1 START sql source model public.driver_location ........................... [RUN]
+[0m23:48:02.979797 [debug] [Thread-1 (]: Acquiring new materialize connection "model.onward_materialize.driver_location"
+[0m23:48:02.979942 [debug] [Thread-1 (]: Began compiling node model.onward_materialize.driver_location
+[0m23:48:02.980073 [debug] [Thread-1 (]: Compiling model.onward_materialize.driver_location
+[0m23:48:02.982905 [debug] [Thread-1 (]: Writing injected SQL for node "model.onward_materialize.driver_location"
+[0m23:48:02.983695 [debug] [Thread-1 (]: finished collecting timing info
+[0m23:48:02.983866 [debug] [Thread-1 (]: Began executing node model.onward_materialize.driver_location
+[0m23:48:02.999123 [debug] [Thread-1 (]: Using materialize connection "model.onward_materialize.driver_location"
+[0m23:48:02.999348 [debug] [Thread-1 (]: On model.onward_materialize.driver_location: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "node_id": "model.onward_materialize.driver_location"} */
+
+      drop source if exists "materialize"."public"."driver_location" cascade
+    
+[0m23:48:02.999470 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m23:48:04.540275 [debug] [Thread-1 (]: SQL status: DROP SOURCE in 1.54 seconds
+[0m23:48:04.553164 [debug] [Thread-1 (]: Writing runtime sql for node "model.onward_materialize.driver_location"
+[0m23:48:04.554272 [debug] [Thread-1 (]: Using materialize connection "model.onward_materialize.driver_location"
+[0m23:48:04.554443 [debug] [Thread-1 (]: On model.onward_materialize.driver_location: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "node_id": "model.onward_materialize.driver_location"} */
+
+
+CREATE SOURCE driver_location
+  FROM KAFKA CONNECTION kafka_connection (TOPIC 'driver_location')
+  KEY FORMAT BYTES
+  VALUE FORMAT BYTES
+  ENVELOPE UPSERT
+  WITH (SIZE = '3xsmall');
+
+-- where id is not null
+[0m23:48:05.677605 [debug] [Thread-1 (]: SQL status: CREATE SOURCE in 1.12 seconds
+[0m23:48:05.695338 [debug] [Thread-1 (]: finished collecting timing info
+[0m23:48:05.695723 [debug] [Thread-1 (]: On model.onward_materialize.driver_location: Close
+[0m23:48:05.696701 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '31873c44-4c7a-4d9b-8fc9-35a36fea41c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe4ea44bc10>]}
+[0m23:48:05.697194 [info ] [Thread-1 (]: 1 of 1 OK created sql source model public.driver_location ...................... [[32mCREATE SOURCE[0m in 2.72s]
+[0m23:48:05.699529 [debug] [Thread-1 (]: Finished running node model.onward_materialize.driver_location
+[0m23:48:05.701191 [debug] [MainThread]: Acquiring new materialize connection "master"
+[0m23:48:05.701795 [info ] [MainThread]: 
+[0m23:48:05.702066 [info ] [MainThread]: Finished running 1 source model in 0 hours 0 minutes and 6.14 seconds (6.14s).
+[0m23:48:05.702314 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m23:48:05.702444 [debug] [MainThread]: Connection 'model.onward_materialize.driver_location' was properly closed.
+[0m23:48:05.712689 [info ] [MainThread]: 
+[0m23:48:05.713042 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m23:48:05.713302 [info ] [MainThread]: 
+[0m23:48:05.713515 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m23:48:05.713879 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe4ea44a650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe4ea44b070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe4ea449c90>]}
+[0m23:48:05.714155 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2022-11-30 23:50:53.032355 | 96fda9e9-154c-4290-8351-63c661247e7c ==============================
+[0m23:50:53.032686 [info ] [MainThread]: Running with dbt=1.3.1
+[0m23:50:53.033719 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/claytonvanhovel/Desktop/onward-materialize-dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m23:50:53.033868 [debug] [MainThread]: Tracking: tracking
+[0m23:50:53.058120 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa6c2291d80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa6c2292530>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa6c2291ea0>]}
+[0m23:50:53.086568 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m23:50:53.086847 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '96fda9e9-154c-4290-8351-63c661247e7c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa6c0b40be0>]}
+[0m23:50:53.102790 [debug] [MainThread]: Parsing macros/mz_generate_name.sql
+[0m23:50:53.104197 [debug] [MainThread]: Parsing macros/catalog.sql
+[0m23:50:53.105420 [debug] [MainThread]: Parsing macros/adapters.sql
+[0m23:50:53.111988 [debug] [MainThread]: Parsing macros/materializations/materialized_view.sql
+[0m23:50:53.114046 [debug] [MainThread]: Parsing macros/materializations/test.sql
+[0m23:50:53.116861 [debug] [MainThread]: Parsing macros/materializations/seed.sql
+[0m23:50:53.122821 [debug] [MainThread]: Parsing macros/materializations/view.sql
+[0m23:50:53.124946 [debug] [MainThread]: Parsing macros/materializations/source.sql
+[0m23:50:53.126924 [debug] [MainThread]: Parsing macros/materializations/table.sql
+[0m23:50:53.128837 [debug] [MainThread]: Parsing macros/materializations/sink.sql
+[0m23:50:53.130685 [debug] [MainThread]: Parsing macros/materializations/incremental.sql
+[0m23:50:53.131239 [debug] [MainThread]: Parsing macros/timestamps.sql
+[0m23:50:53.132332 [debug] [MainThread]: Parsing macros/catalog.sql
+[0m23:50:53.133695 [debug] [MainThread]: Parsing macros/relations.sql
+[0m23:50:53.134572 [debug] [MainThread]: Parsing macros/adapters.sql
+[0m23:50:53.149438 [debug] [MainThread]: Parsing macros/materializations/incremental_strategies.sql
+[0m23:50:53.150047 [debug] [MainThread]: Parsing macros/materializations/snapshot_merge.sql
+[0m23:50:53.151081 [debug] [MainThread]: Parsing macros/utils/dateadd.sql
+[0m23:50:53.151447 [debug] [MainThread]: Parsing macros/utils/listagg.sql
+[0m23:50:53.152314 [debug] [MainThread]: Parsing macros/utils/datediff.sql
+[0m23:50:53.156414 [debug] [MainThread]: Parsing macros/utils/any_value.sql
+[0m23:50:53.156696 [debug] [MainThread]: Parsing macros/utils/last_day.sql
+[0m23:50:53.157429 [debug] [MainThread]: Parsing macros/utils/split_part.sql
+[0m23:50:53.158053 [debug] [MainThread]: Parsing macros/materializations/hooks.sql
+[0m23:50:53.160350 [debug] [MainThread]: Parsing macros/materializations/configs.sql
+[0m23:50:53.161725 [debug] [MainThread]: Parsing macros/materializations/snapshots/snapshot_merge.sql
+[0m23:50:53.162699 [debug] [MainThread]: Parsing macros/materializations/snapshots/strategies.sql
+[0m23:50:53.172818 [debug] [MainThread]: Parsing macros/materializations/snapshots/helpers.sql
+[0m23:50:53.180897 [debug] [MainThread]: Parsing macros/materializations/snapshots/snapshot.sql
+[0m23:50:53.188411 [debug] [MainThread]: Parsing macros/materializations/tests/test.sql
+[0m23:50:53.191173 [debug] [MainThread]: Parsing macros/materializations/tests/helpers.sql
+[0m23:50:53.192220 [debug] [MainThread]: Parsing macros/materializations/tests/where_subquery.sql
+[0m23:50:53.193286 [debug] [MainThread]: Parsing macros/materializations/models/incremental/column_helpers.sql
+[0m23:50:53.198168 [debug] [MainThread]: Parsing macros/materializations/models/incremental/merge.sql
+[0m23:50:53.207723 [debug] [MainThread]: Parsing macros/materializations/models/incremental/is_incremental.sql
+[0m23:50:53.208625 [debug] [MainThread]: Parsing macros/materializations/models/incremental/strategies.sql
+[0m23:50:53.212839 [debug] [MainThread]: Parsing macros/materializations/models/incremental/incremental.sql
+[0m23:50:53.219379 [debug] [MainThread]: Parsing macros/materializations/models/incremental/on_schema_change.sql
+[0m23:50:53.229859 [debug] [MainThread]: Parsing macros/materializations/models/table/table.sql
+[0m23:50:53.233251 [debug] [MainThread]: Parsing macros/materializations/models/table/create_table_as.sql
+[0m23:50:53.235334 [debug] [MainThread]: Parsing macros/materializations/models/view/view.sql
+[0m23:50:53.238695 [debug] [MainThread]: Parsing macros/materializations/models/view/helpers.sql
+[0m23:50:53.239455 [debug] [MainThread]: Parsing macros/materializations/models/view/create_or_replace_view.sql
+[0m23:50:53.241507 [debug] [MainThread]: Parsing macros/materializations/models/view/create_view_as.sql
+[0m23:50:53.242842 [debug] [MainThread]: Parsing macros/materializations/seeds/seed.sql
+[0m23:50:53.247131 [debug] [MainThread]: Parsing macros/materializations/seeds/helpers.sql
+[0m23:50:53.258444 [debug] [MainThread]: Parsing macros/get_custom_name/get_custom_alias.sql
+[0m23:50:53.259322 [debug] [MainThread]: Parsing macros/get_custom_name/get_custom_schema.sql
+[0m23:50:53.260796 [debug] [MainThread]: Parsing macros/get_custom_name/get_custom_database.sql
+[0m23:50:53.261703 [debug] [MainThread]: Parsing macros/generic_test_sql/relationships.sql
+[0m23:50:53.262236 [debug] [MainThread]: Parsing macros/generic_test_sql/not_null.sql
+[0m23:50:53.262708 [debug] [MainThread]: Parsing macros/generic_test_sql/unique.sql
+[0m23:50:53.263105 [debug] [MainThread]: Parsing macros/generic_test_sql/accepted_values.sql
+[0m23:50:53.263905 [debug] [MainThread]: Parsing macros/etc/statement.sql
+[0m23:50:53.267118 [debug] [MainThread]: Parsing macros/etc/datetime.sql
+[0m23:50:53.272219 [debug] [MainThread]: Parsing macros/utils/except.sql
+[0m23:50:53.272696 [debug] [MainThread]: Parsing macros/utils/replace.sql
+[0m23:50:53.273419 [debug] [MainThread]: Parsing macros/utils/concat.sql
+[0m23:50:53.273977 [debug] [MainThread]: Parsing macros/utils/length.sql
+[0m23:50:53.274521 [debug] [MainThread]: Parsing macros/utils/dateadd.sql
+[0m23:50:53.275262 [debug] [MainThread]: Parsing macros/utils/intersect.sql
+[0m23:50:53.275747 [debug] [MainThread]: Parsing macros/utils/escape_single_quotes.sql
+[0m23:50:53.276349 [debug] [MainThread]: Parsing macros/utils/right.sql
+[0m23:50:53.277082 [debug] [MainThread]: Parsing macros/utils/listagg.sql
+[0m23:50:53.278510 [debug] [MainThread]: Parsing macros/utils/datediff.sql
+[0m23:50:53.279263 [debug] [MainThread]: Parsing macros/utils/safe_cast.sql
+[0m23:50:53.279924 [debug] [MainThread]: Parsing macros/utils/hash.sql
+[0m23:50:53.280576 [debug] [MainThread]: Parsing macros/utils/cast_bool_to_text.sql
+[0m23:50:53.281203 [debug] [MainThread]: Parsing macros/utils/any_value.sql
+[0m23:50:53.281761 [debug] [MainThread]: Parsing macros/utils/position.sql
+[0m23:50:53.282404 [debug] [MainThread]: Parsing macros/utils/literal.sql
+[0m23:50:53.282953 [debug] [MainThread]: Parsing macros/utils/data_types.sql
+[0m23:50:53.288508 [debug] [MainThread]: Parsing macros/utils/array_concat.sql
+[0m23:50:53.289264 [debug] [MainThread]: Parsing macros/utils/bool_or.sql
+[0m23:50:53.289843 [debug] [MainThread]: Parsing macros/utils/last_day.sql
+[0m23:50:53.290927 [debug] [MainThread]: Parsing macros/utils/split_part.sql
+[0m23:50:53.292239 [debug] [MainThread]: Parsing macros/utils/date_trunc.sql
+[0m23:50:53.292849 [debug] [MainThread]: Parsing macros/utils/array_construct.sql
+[0m23:50:53.293745 [debug] [MainThread]: Parsing macros/utils/array_append.sql
+[0m23:50:53.294387 [debug] [MainThread]: Parsing macros/adapters/schema.sql
+[0m23:50:53.295695 [debug] [MainThread]: Parsing macros/adapters/timestamps.sql
+[0m23:50:53.297675 [debug] [MainThread]: Parsing macros/adapters/indexes.sql
+[0m23:50:53.299357 [debug] [MainThread]: Parsing macros/adapters/relation.sql
+[0m23:50:53.308389 [debug] [MainThread]: Parsing macros/adapters/freshness.sql
+[0m23:50:53.309566 [debug] [MainThread]: Parsing macros/adapters/apply_grants.sql
+[0m23:50:53.318050 [debug] [MainThread]: Parsing macros/adapters/persist_docs.sql
+[0m23:50:53.320711 [debug] [MainThread]: Parsing macros/adapters/metadata.sql
+[0m23:50:53.325030 [debug] [MainThread]: Parsing macros/adapters/columns.sql
+[0m23:50:53.330954 [debug] [MainThread]: Parsing macros/python_model/python.sql
+[0m23:50:53.334678 [debug] [MainThread]: Parsing tests/generic/builtin.sql
+[0m23:50:53.509519 [debug] [MainThread]: 1699: static parser successfully parsed materializedviews/json_driver_location.sql
+[0m23:50:53.517594 [debug] [MainThread]: 1699: static parser successfully parsed sources/src_driver_location.sql
+[0m23:50:53.537337 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa6c242d3f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa6c2435fc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa6c24358a0>]}
+[0m23:50:53.537544 [debug] [MainThread]: Flushing usage events
+[0m23:50:53.916899 [error] [MainThread]: Encountered an error:
+Compilation Error in model json_driver_location (models/materializedviews/json_driver_location.sql)
+  Model 'model.onward_materialize.json_driver_location' (models/materializedviews/json_driver_location.sql) depends on a node named 'driver_location' which was not found
+
+
+============================== 2022-11-30 23:51:14.613020 | 6d78ed16-608f-4ff7-9666-6b0d357ff016 ==============================
+[0m23:51:14.613074 [info ] [MainThread]: Running with dbt=1.3.1
+[0m23:51:14.613791 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/claytonvanhovel/Desktop/onward-materialize-dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m23:51:14.613936 [debug] [MainThread]: Tracking: tracking
+[0m23:51:14.642177 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8c3a2fd6f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8c3a2fde10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8c3a2ff700>]}
+[0m23:51:14.671721 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m23:51:14.672018 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '6d78ed16-608f-4ff7-9666-6b0d357ff016', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8c187d8be0>]}
+[0m23:51:14.688188 [debug] [MainThread]: Parsing macros/mz_generate_name.sql
+[0m23:51:14.689723 [debug] [MainThread]: Parsing macros/catalog.sql
+[0m23:51:14.691120 [debug] [MainThread]: Parsing macros/adapters.sql
+[0m23:51:14.698145 [debug] [MainThread]: Parsing macros/materializations/materialized_view.sql
+[0m23:51:14.700260 [debug] [MainThread]: Parsing macros/materializations/test.sql
+[0m23:51:14.703188 [debug] [MainThread]: Parsing macros/materializations/seed.sql
+[0m23:51:14.709228 [debug] [MainThread]: Parsing macros/materializations/view.sql
+[0m23:51:14.711350 [debug] [MainThread]: Parsing macros/materializations/source.sql
+[0m23:51:14.713425 [debug] [MainThread]: Parsing macros/materializations/table.sql
+[0m23:51:14.715378 [debug] [MainThread]: Parsing macros/materializations/sink.sql
+[0m23:51:14.717254 [debug] [MainThread]: Parsing macros/materializations/incremental.sql
+[0m23:51:14.717834 [debug] [MainThread]: Parsing macros/timestamps.sql
+[0m23:51:14.719135 [debug] [MainThread]: Parsing macros/catalog.sql
+[0m23:51:14.720641 [debug] [MainThread]: Parsing macros/relations.sql
+[0m23:51:14.721576 [debug] [MainThread]: Parsing macros/adapters.sql
+[0m23:51:14.737320 [debug] [MainThread]: Parsing macros/materializations/incremental_strategies.sql
+[0m23:51:14.737937 [debug] [MainThread]: Parsing macros/materializations/snapshot_merge.sql
+[0m23:51:14.738999 [debug] [MainThread]: Parsing macros/utils/dateadd.sql
+[0m23:51:14.739367 [debug] [MainThread]: Parsing macros/utils/listagg.sql
+[0m23:51:14.740268 [debug] [MainThread]: Parsing macros/utils/datediff.sql
+[0m23:51:14.744609 [debug] [MainThread]: Parsing macros/utils/any_value.sql
+[0m23:51:14.744904 [debug] [MainThread]: Parsing macros/utils/last_day.sql
+[0m23:51:14.745660 [debug] [MainThread]: Parsing macros/utils/split_part.sql
+[0m23:51:14.746291 [debug] [MainThread]: Parsing macros/materializations/hooks.sql
+[0m23:51:14.748629 [debug] [MainThread]: Parsing macros/materializations/configs.sql
+[0m23:51:14.750098 [debug] [MainThread]: Parsing macros/materializations/snapshots/snapshot_merge.sql
+[0m23:51:14.751303 [debug] [MainThread]: Parsing macros/materializations/snapshots/strategies.sql
+[0m23:51:14.761935 [debug] [MainThread]: Parsing macros/materializations/snapshots/helpers.sql
+[0m23:51:14.770668 [debug] [MainThread]: Parsing macros/materializations/snapshots/snapshot.sql
+[0m23:51:14.778599 [debug] [MainThread]: Parsing macros/materializations/tests/test.sql
+[0m23:51:14.781475 [debug] [MainThread]: Parsing macros/materializations/tests/helpers.sql
+[0m23:51:14.782564 [debug] [MainThread]: Parsing macros/materializations/tests/where_subquery.sql
+[0m23:51:14.783632 [debug] [MainThread]: Parsing macros/materializations/models/incremental/column_helpers.sql
+[0m23:51:14.789149 [debug] [MainThread]: Parsing macros/materializations/models/incremental/merge.sql
+[0m23:51:14.800271 [debug] [MainThread]: Parsing macros/materializations/models/incremental/is_incremental.sql
+[0m23:51:14.801256 [debug] [MainThread]: Parsing macros/materializations/models/incremental/strategies.sql
+[0m23:51:14.805504 [debug] [MainThread]: Parsing macros/materializations/models/incremental/incremental.sql
+[0m23:51:14.812638 [debug] [MainThread]: Parsing macros/materializations/models/incremental/on_schema_change.sql
+[0m23:51:14.824096 [debug] [MainThread]: Parsing macros/materializations/models/table/table.sql
+[0m23:51:14.827650 [debug] [MainThread]: Parsing macros/materializations/models/table/create_table_as.sql
+[0m23:51:14.829846 [debug] [MainThread]: Parsing macros/materializations/models/view/view.sql
+[0m23:51:14.833389 [debug] [MainThread]: Parsing macros/materializations/models/view/helpers.sql
+[0m23:51:14.834165 [debug] [MainThread]: Parsing macros/materializations/models/view/create_or_replace_view.sql
+[0m23:51:14.836282 [debug] [MainThread]: Parsing macros/materializations/models/view/create_view_as.sql
+[0m23:51:14.837655 [debug] [MainThread]: Parsing macros/materializations/seeds/seed.sql
+[0m23:51:14.842133 [debug] [MainThread]: Parsing macros/materializations/seeds/helpers.sql
+[0m23:51:14.854126 [debug] [MainThread]: Parsing macros/get_custom_name/get_custom_alias.sql
+[0m23:51:14.855019 [debug] [MainThread]: Parsing macros/get_custom_name/get_custom_schema.sql
+[0m23:51:14.856562 [debug] [MainThread]: Parsing macros/get_custom_name/get_custom_database.sql
+[0m23:51:14.857556 [debug] [MainThread]: Parsing macros/generic_test_sql/relationships.sql
+[0m23:51:14.858098 [debug] [MainThread]: Parsing macros/generic_test_sql/not_null.sql
+[0m23:51:14.858579 [debug] [MainThread]: Parsing macros/generic_test_sql/unique.sql
+[0m23:51:14.858980 [debug] [MainThread]: Parsing macros/generic_test_sql/accepted_values.sql
+[0m23:51:14.859795 [debug] [MainThread]: Parsing macros/etc/statement.sql
+[0m23:51:14.863100 [debug] [MainThread]: Parsing macros/etc/datetime.sql
+[0m23:51:14.868449 [debug] [MainThread]: Parsing macros/utils/except.sql
+[0m23:51:14.868943 [debug] [MainThread]: Parsing macros/utils/replace.sql
+[0m23:51:14.869666 [debug] [MainThread]: Parsing macros/utils/concat.sql
+[0m23:51:14.870231 [debug] [MainThread]: Parsing macros/utils/length.sql
+[0m23:51:14.870813 [debug] [MainThread]: Parsing macros/utils/dateadd.sql
+[0m23:51:14.871555 [debug] [MainThread]: Parsing macros/utils/intersect.sql
+[0m23:51:14.872065 [debug] [MainThread]: Parsing macros/utils/escape_single_quotes.sql
+[0m23:51:14.872677 [debug] [MainThread]: Parsing macros/utils/right.sql
+[0m23:51:14.873419 [debug] [MainThread]: Parsing macros/utils/listagg.sql
+[0m23:51:14.874836 [debug] [MainThread]: Parsing macros/utils/datediff.sql
+[0m23:51:14.875586 [debug] [MainThread]: Parsing macros/utils/safe_cast.sql
+[0m23:51:14.876219 [debug] [MainThread]: Parsing macros/utils/hash.sql
+[0m23:51:14.876845 [debug] [MainThread]: Parsing macros/utils/cast_bool_to_text.sql
+[0m23:51:14.877456 [debug] [MainThread]: Parsing macros/utils/any_value.sql
+[0m23:51:14.878004 [debug] [MainThread]: Parsing macros/utils/position.sql
+[0m23:51:14.878649 [debug] [MainThread]: Parsing macros/utils/literal.sql
+[0m23:51:14.879188 [debug] [MainThread]: Parsing macros/utils/data_types.sql
+[0m23:51:14.883531 [debug] [MainThread]: Parsing macros/utils/array_concat.sql
+[0m23:51:14.884162 [debug] [MainThread]: Parsing macros/utils/bool_or.sql
+[0m23:51:14.884700 [debug] [MainThread]: Parsing macros/utils/last_day.sql
+[0m23:51:14.885797 [debug] [MainThread]: Parsing macros/utils/split_part.sql
+[0m23:51:14.887142 [debug] [MainThread]: Parsing macros/utils/date_trunc.sql
+[0m23:51:14.887748 [debug] [MainThread]: Parsing macros/utils/array_construct.sql
+[0m23:51:14.888639 [debug] [MainThread]: Parsing macros/utils/array_append.sql
+[0m23:51:14.889274 [debug] [MainThread]: Parsing macros/adapters/schema.sql
+[0m23:51:14.890550 [debug] [MainThread]: Parsing macros/adapters/timestamps.sql
+[0m23:51:14.892559 [debug] [MainThread]: Parsing macros/adapters/indexes.sql
+[0m23:51:14.894255 [debug] [MainThread]: Parsing macros/adapters/relation.sql
+[0m23:51:14.903692 [debug] [MainThread]: Parsing macros/adapters/freshness.sql
+[0m23:51:14.904881 [debug] [MainThread]: Parsing macros/adapters/apply_grants.sql
+[0m23:51:14.913444 [debug] [MainThread]: Parsing macros/adapters/persist_docs.sql
+[0m23:51:14.916154 [debug] [MainThread]: Parsing macros/adapters/metadata.sql
+[0m23:51:14.920678 [debug] [MainThread]: Parsing macros/adapters/columns.sql
+[0m23:51:14.926855 [debug] [MainThread]: Parsing macros/python_model/python.sql
+[0m23:51:14.930719 [debug] [MainThread]: Parsing tests/generic/builtin.sql
+[0m23:51:15.105590 [debug] [MainThread]: 1699: static parser successfully parsed materializedviews/json_driver_location.sql
+[0m23:51:15.113671 [debug] [MainThread]: 1699: static parser successfully parsed sources/src_driver_location.sql
+[0m23:51:15.156147 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '6d78ed16-608f-4ff7-9666-6b0d357ff016', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8c2826d720>]}
+[0m23:51:15.161158 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '6d78ed16-608f-4ff7-9666-6b0d357ff016', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8c3a204460>]}
+[0m23:51:15.161352 [info ] [MainThread]: Found 2 models, 0 tests, 0 snapshots, 0 analyses, 307 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+[0m23:51:15.161525 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6d78ed16-608f-4ff7-9666-6b0d357ff016', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8c2825a980>]}
+[0m23:51:15.162490 [info ] [MainThread]: 
+[0m23:51:15.162893 [debug] [MainThread]: Acquiring new materialize connection "master"
+[0m23:51:15.163576 [debug] [ThreadPool]: Acquiring new materialize connection "list_materialize"
+[0m23:51:15.170937 [debug] [ThreadPool]: Using materialize connection "list_materialize"
+[0m23:51:15.171094 [debug] [ThreadPool]: On list_materialize: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "connection_name": "list_materialize"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m23:51:15.171189 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:51:16.813903 [debug] [ThreadPool]: SQL status: SELECT 5 in 1.64 seconds
+[0m23:51:16.818912 [debug] [ThreadPool]: On list_materialize: Close
+[0m23:51:16.821354 [debug] [ThreadPool]: Acquiring new materialize connection "list_materialize_public"
+[0m23:51:16.827962 [debug] [ThreadPool]: Using materialize connection "list_materialize_public"
+[0m23:51:16.828173 [debug] [ThreadPool]: On list_materialize_public: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "connection_name": "list_materialize_public"} */
+select
+        d.name as database,
+        s.name as schema,
+        o.name,
+        case when o.type = 'materialized-view' then 'materializedview' else o.type end as type
+    from mz_objects o
+    join mz_schemas s on o.schema_id = s.id and s.name = 'public'
+    join mz_databases d on s.database_id = d.id and d.name = 'materialize'
+    where type in ('table', 'source', 'view', 'materialized-view', 'index', 'sink')
+  
+[0m23:51:16.828325 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m23:51:18.380116 [debug] [ThreadPool]: SQL status: SELECT 1 in 1.55 seconds
+[0m23:51:18.385147 [debug] [ThreadPool]: On list_materialize_public: Close
+[0m23:51:18.386777 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6d78ed16-608f-4ff7-9666-6b0d357ff016', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8c282a7430>]}
+[0m23:51:18.387794 [info ] [MainThread]: Concurrency: 1 threads (target='prod')
+[0m23:51:18.388143 [info ] [MainThread]: 
+[0m23:51:18.394457 [debug] [Thread-1 (]: Began running node model.onward_materialize.src_driver_location
+[0m23:51:18.394757 [info ] [Thread-1 (]: 1 of 2 START sql source model public.src_driver_location ....................... [RUN]
+[0m23:51:18.395636 [debug] [Thread-1 (]: Acquiring new materialize connection "model.onward_materialize.src_driver_location"
+[0m23:51:18.395824 [debug] [Thread-1 (]: Began compiling node model.onward_materialize.src_driver_location
+[0m23:51:18.396012 [debug] [Thread-1 (]: Compiling model.onward_materialize.src_driver_location
+[0m23:51:18.399695 [debug] [Thread-1 (]: Writing injected SQL for node "model.onward_materialize.src_driver_location"
+[0m23:51:18.400256 [debug] [Thread-1 (]: finished collecting timing info
+[0m23:51:18.400435 [debug] [Thread-1 (]: Began executing node model.onward_materialize.src_driver_location
+[0m23:51:18.414897 [debug] [Thread-1 (]: Writing runtime sql for node "model.onward_materialize.src_driver_location"
+[0m23:51:18.415371 [debug] [Thread-1 (]: Using materialize connection "model.onward_materialize.src_driver_location"
+[0m23:51:18.415512 [debug] [Thread-1 (]: On model.onward_materialize.src_driver_location: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "node_id": "model.onward_materialize.src_driver_location"} */
+
+
+CREATE SOURCE driver_location
+  FROM KAFKA CONNECTION kafka_connection (TOPIC 'driver_location')
+  KEY FORMAT BYTES
+  VALUE FORMAT BYTES
+  ENVELOPE UPSERT
+  WITH (SIZE = '3xsmall');
+
+-- where id is not null
+[0m23:51:18.415647 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m23:51:20.497290 [debug] [Thread-1 (]: Postgres adapter: Postgres error: catalog item 'driver_location' already exists
+
+[0m23:51:20.499688 [debug] [Thread-1 (]: finished collecting timing info
+[0m23:51:20.500172 [debug] [Thread-1 (]: On model.onward_materialize.src_driver_location: Close
+[0m23:51:20.501979 [debug] [Thread-1 (]: Database Error in model src_driver_location (models/sources/src_driver_location.sql)
+  catalog item 'driver_location' already exists
+  compiled Code at target/run/onward_materialize/models/sources/src_driver_location.sql
+[0m23:51:20.502617 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '6d78ed16-608f-4ff7-9666-6b0d357ff016', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8c3a480e80>]}
+[0m23:51:20.503205 [error] [Thread-1 (]: 1 of 2 ERROR creating sql source model public.src_driver_location .............. [[31mERROR[0m in 2.11s]
+[0m23:51:20.505653 [debug] [Thread-1 (]: Finished running node model.onward_materialize.src_driver_location
+[0m23:51:20.506657 [debug] [Thread-1 (]: Began running node model.onward_materialize.json_driver_location
+[0m23:51:20.506872 [info ] [Thread-1 (]: 2 of 2 SKIP relation public.json_driver_location ............................... [[33mSKIP[0m]
+[0m23:51:20.507252 [debug] [Thread-1 (]: Finished running node model.onward_materialize.json_driver_location
+[0m23:51:20.508449 [debug] [MainThread]: Acquiring new materialize connection "master"
+[0m23:51:20.509074 [info ] [MainThread]: 
+[0m23:51:20.509341 [info ] [MainThread]: Finished running 1 source model, 1 materializedview model in 0 hours 0 minutes and 5.35 seconds (5.35s).
+[0m23:51:20.509593 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m23:51:20.509720 [debug] [MainThread]: Connection 'model.onward_materialize.src_driver_location' was properly closed.
+[0m23:51:20.518178 [info ] [MainThread]: 
+[0m23:51:20.518472 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m23:51:20.518733 [info ] [MainThread]: 
+[0m23:51:20.518959 [error] [MainThread]: [33mDatabase Error in model src_driver_location (models/sources/src_driver_location.sql)[0m
+[0m23:51:20.519186 [error] [MainThread]:   catalog item 'driver_location' already exists
+[0m23:51:20.519396 [error] [MainThread]:   compiled Code at target/run/onward_materialize/models/sources/src_driver_location.sql
+[0m23:51:20.519620 [info ] [MainThread]: 
+[0m23:51:20.519844 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=1 TOTAL=2
+[0m23:51:20.520185 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8c2826e1d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8c2826dd20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8c3a4803d0>]}
+[0m23:51:20.520438 [debug] [MainThread]: Flushing usage events

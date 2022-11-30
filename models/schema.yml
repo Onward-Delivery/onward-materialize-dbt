@@ -1,0 +1,13 @@
+
+version: 2
+
+sources:
+  - name: postgres
+    schema: "{{ target.schema }}"
+    tables:
+      - name: postgres_table_a
+      - name: postgres_table_b
+  - name: kafka
+    schema: "{{ target.schema }}"
+    tables:
+      - name: driver_location

@@ -1,0 +1,45 @@
+#
+#default:
+#  outputs:
+#
+#    dev:
+#      type: postgres
+#      threads: [1 or more]
+#      host: [host]
+#      port: [port]
+#      user: [dev_username]
+#      pass: [dev_password]
+#      dbname: [dbname]
+#      schema: [dev_schema]
+#
+#    prod:
+#      type: postgres
+#      threads: [1 or more]
+#      host: [host]
+#      port: [port]
+#      user: [prod_username]
+#      pass: [prod_password]
+#      dbname: [dbname]
+#      schema: [prod_schema]
+#
+#  target: dev
+
+default:
+  outputs:
+
+    prod:
+      type: materialize
+      threads: 1
+      host: b1zynbr064d5aawnqfff065n1.eu-west-1.aws.materialize.cloud
+      port: 6875
+      user: clayton.vanhovel@onwarddelivery.com
+      pass: mzp_14d7bfe32fe64d3cb5751b65633d41b6831bbb7576d34acdb69edf86edb08dec
+      database: materialize
+      schema: public
+      # optionally use the cluster connection
+      # parameter to specify the default cluster
+      # for the connection
+      cluster: default
+      sslmode: require
+
+  target: prod
