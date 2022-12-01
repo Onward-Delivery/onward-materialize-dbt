@@ -1,9 +1,14 @@
-{{ config(materialized='materializedview') }}
+create materialized view "materialize"."public"."json_driver_location"
+  
+    in cluster default
+  
+  as (
+    
 
 with
 
 src_driver_location as (
-    select key, CONVERT_FROM(data, 'utf8')::jsonb as data from {{source('kafka','src_driver_location')}}
+    select key, CONVERT_FROM(data, 'utf8')::jsonb as data from "materialize"."public"."src_driver_location"
 )
 
 ,final as (
@@ -19,3 +24,4 @@ src_driver_location as (
 )
 
 select * from final
+  );

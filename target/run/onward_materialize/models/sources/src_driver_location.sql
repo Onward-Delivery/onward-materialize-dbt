@@ -1,6 +1,6 @@
 
 
-CREATE SOURCE driver_location
+CREATE SOURCE IF NOT EXISTS "materialize"."public"."src_driver_location"
   FROM KAFKA CONNECTION kafka_connection (TOPIC 'driver_location')
   KEY FORMAT BYTES
   VALUE FORMAT BYTES

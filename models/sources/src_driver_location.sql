@@ -1,7 +1,7 @@
 
 {{ config(materialized='source') }}
 
-CREATE SOURCE driver_location
+CREATE SOURCE IF NOT EXISTS {{this}}
   FROM KAFKA CONNECTION kafka_connection (TOPIC 'driver_location')
   KEY FORMAT BYTES
   VALUE FORMAT BYTES

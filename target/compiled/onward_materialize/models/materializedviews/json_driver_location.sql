@@ -1,9 +1,9 @@
-{{ config(materialized='materializedview') }}
+
 
 with
 
 src_driver_location as (
-    select key, CONVERT_FROM(data, 'utf8')::jsonb as data from {{source('kafka','src_driver_location')}}
+    select key, CONVERT_FROM(data, 'utf8')::jsonb as data from "materialize"."public"."src_driver_location"
 )
 
 ,final as (
