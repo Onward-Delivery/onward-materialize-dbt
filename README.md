@@ -1,15 +1,11 @@
-Welcome to your new dbt project!
+Steps to view this locally and deploy changes. Feel free to ask Clayton any questions on this
 
-### Using the starter project
-
-Try running the following commands:
-- dbt run
-- dbt test
-
-
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+1. Setup Python environment
+2. Clone this repository
+3. pip install dbt-materialize
+4. configure profiles.yml file with materialize connection
+5. make changes in repo
+6. dbt docs generate
+7. dbt docs serve (this allows you to view the docs and lineage graph of data flow)
+8. dbt run
+9. push changes back to remote branch
