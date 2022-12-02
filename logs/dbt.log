@@ -1840,3 +1840,1300 @@ select
 [0m18:13:29.822161 [info ] [MainThread]: Press Ctrl+C to exit.
 [0m18:14:10.888858 [debug] [MainThread]: Flushing usage events
 [0m18:14:11.225685 [info ] [MainThread]: ctrl-c
+
+
+============================== 2022-12-02 00:10:18.679479 | 1c954ab1-e97e-4e79-8c25-92b1bdd0f0ee ==============================
+[0m00:10:18.679554 [info ] [MainThread]: Running with dbt=1.3.1
+[0m00:10:18.681042 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/claytonvanhovel/Desktop/onward-materialize-dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m00:10:18.681218 [debug] [MainThread]: Tracking: tracking
+[0m00:10:18.717055 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd6d0281a50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd6d0282230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd6d0281b70>]}
+[0m00:10:18.768016 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m00:10:18.768223 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m00:10:18.773660 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '1c954ab1-e97e-4e79-8c25-92b1bdd0f0ee', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd712540280>]}
+[0m00:10:18.779221 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '1c954ab1-e97e-4e79-8c25-92b1bdd0f0ee', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd712515240>]}
+[0m00:10:18.779455 [info ] [MainThread]: Found 2 models, 0 tests, 0 snapshots, 0 analyses, 307 macros, 0 operations, 0 seed files, 1 source, 0 exposures, 0 metrics
+[0m00:10:18.779635 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1c954ab1-e97e-4e79-8c25-92b1bdd0f0ee', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd712515270>]}
+[0m00:10:18.780699 [info ] [MainThread]: 
+[0m00:10:18.781133 [debug] [MainThread]: Acquiring new materialize connection "master"
+[0m00:10:18.781886 [debug] [ThreadPool]: Acquiring new materialize connection "list_materialize"
+[0m00:10:18.789895 [debug] [ThreadPool]: Using materialize connection "list_materialize"
+[0m00:10:18.790072 [debug] [ThreadPool]: On list_materialize: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "connection_name": "list_materialize"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m00:10:18.790164 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:10:20.346406 [debug] [ThreadPool]: SQL status: SELECT 5 in 1.56 seconds
+[0m00:10:20.355598 [debug] [ThreadPool]: On list_materialize: Close
+[0m00:10:20.361226 [debug] [ThreadPool]: Acquiring new materialize connection "list_materialize_public"
+[0m00:10:20.375378 [debug] [ThreadPool]: Using materialize connection "list_materialize_public"
+[0m00:10:20.375772 [debug] [ThreadPool]: On list_materialize_public: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "connection_name": "list_materialize_public"} */
+select
+        d.name as database,
+        s.name as schema,
+        o.name,
+        case when o.type = 'materialized-view' then 'materializedview' else o.type end as type
+    from mz_objects o
+    join mz_schemas s on o.schema_id = s.id and s.name = 'public'
+    join mz_databases d on s.database_id = d.id and d.name = 'materialize'
+    where type in ('table', 'source', 'view', 'materialized-view', 'index', 'sink')
+  
+[0m00:10:20.375929 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m00:10:21.732009 [debug] [ThreadPool]: SQL status: SELECT 1 in 1.36 seconds
+[0m00:10:21.734989 [debug] [ThreadPool]: On list_materialize_public: Close
+[0m00:10:21.737310 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1c954ab1-e97e-4e79-8c25-92b1bdd0f0ee', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd6d0283be0>]}
+[0m00:10:21.740889 [info ] [MainThread]: Concurrency: 1 threads (target='prod')
+[0m00:10:21.742218 [info ] [MainThread]: 
+[0m00:10:21.757312 [debug] [Thread-1 (]: Began running node model.onward_materialize.json_driver_location
+[0m00:10:21.759019 [info ] [Thread-1 (]: 1 of 2 START sql materializedview model public.json_driver_location ............ [RUN]
+[0m00:10:21.761393 [debug] [Thread-1 (]: Acquiring new materialize connection "model.onward_materialize.json_driver_location"
+[0m00:10:21.762826 [debug] [Thread-1 (]: Began compiling node model.onward_materialize.json_driver_location
+[0m00:10:21.763422 [debug] [Thread-1 (]: Compiling model.onward_materialize.json_driver_location
+[0m00:10:21.767835 [debug] [Thread-1 (]: Writing injected SQL for node "model.onward_materialize.json_driver_location"
+[0m00:10:21.768754 [debug] [Thread-1 (]: finished collecting timing info
+[0m00:10:21.768960 [debug] [Thread-1 (]: Began executing node model.onward_materialize.json_driver_location
+[0m00:10:21.786093 [debug] [Thread-1 (]: Writing runtime sql for node "model.onward_materialize.json_driver_location"
+[0m00:10:21.787324 [debug] [Thread-1 (]: Using materialize connection "model.onward_materialize.json_driver_location"
+[0m00:10:21.787493 [debug] [Thread-1 (]: On model.onward_materialize.json_driver_location: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "node_id": "model.onward_materialize.json_driver_location"} */
+create materialized view "materialize"."public"."json_driver_location"
+  
+    in cluster default
+  
+  as (
+    
+
+with
+
+src_driver_location as (
+    select key, CONVERT_FROM(data, 'utf8')::jsonb as data from "materialize"."public"."src_driver_location"
+)
+
+,final as (
+
+  SELECT
+    CONVERT_FROM(key, 'utf8') as key,
+    data->>'uid' AS uid,
+    to_timestamp(cast(data->>'timestamp' as double)) AS timestamp,
+    data->>'latitude' AS latitude,
+    data->>'longitude' AS longitude,
+    data->>'speed' AS speed
+  FROM src_driver_location
+)
+
+select * from final
+  );
+[0m00:10:21.787639 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m00:10:23.548343 [debug] [Thread-1 (]: SQL status: CREATE MATERIALIZED VIEW in 1.76 seconds
+[0m00:10:23.579303 [debug] [Thread-1 (]: finished collecting timing info
+[0m00:10:23.579786 [debug] [Thread-1 (]: On model.onward_materialize.json_driver_location: Close
+[0m00:10:23.581002 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1c954ab1-e97e-4e79-8c25-92b1bdd0f0ee', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd71257fc10>]}
+[0m00:10:23.581522 [info ] [Thread-1 (]: 1 of 2 OK created sql materializedview model public.json_driver_location ....... [[32mCREATE MATERIALIZED VIEW[0m in 1.82s]
+[0m00:10:23.583946 [debug] [Thread-1 (]: Finished running node model.onward_materialize.json_driver_location
+[0m00:10:23.584177 [debug] [Thread-1 (]: Began running node model.onward_materialize.src_driver_location
+[0m00:10:23.584587 [info ] [Thread-1 (]: 2 of 2 START sql source model public.src_driver_location ....................... [RUN]
+[0m00:10:23.585306 [debug] [Thread-1 (]: Acquiring new materialize connection "model.onward_materialize.src_driver_location"
+[0m00:10:23.585490 [debug] [Thread-1 (]: Began compiling node model.onward_materialize.src_driver_location
+[0m00:10:23.585650 [debug] [Thread-1 (]: Compiling model.onward_materialize.src_driver_location
+[0m00:10:23.589326 [debug] [Thread-1 (]: Writing injected SQL for node "model.onward_materialize.src_driver_location"
+[0m00:10:23.590363 [debug] [Thread-1 (]: finished collecting timing info
+[0m00:10:23.590550 [debug] [Thread-1 (]: Began executing node model.onward_materialize.src_driver_location
+[0m00:10:23.607515 [debug] [Thread-1 (]: Using materialize connection "model.onward_materialize.src_driver_location"
+[0m00:10:23.607804 [debug] [Thread-1 (]: On model.onward_materialize.src_driver_location: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "node_id": "model.onward_materialize.src_driver_location"} */
+
+      drop source if exists "materialize"."public"."src_driver_location" cascade
+    
+[0m00:10:23.607943 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m00:10:26.654265 [debug] [Thread-1 (]: SQL status: DROP SOURCE in 3.05 seconds
+[0m00:10:26.662885 [debug] [Thread-1 (]: Writing runtime sql for node "model.onward_materialize.src_driver_location"
+[0m00:10:26.663897 [debug] [Thread-1 (]: Using materialize connection "model.onward_materialize.src_driver_location"
+[0m00:10:26.664066 [debug] [Thread-1 (]: On model.onward_materialize.src_driver_location: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "node_id": "model.onward_materialize.src_driver_location"} */
+
+
+CREATE SOURCE IF NOT EXISTS "materialize"."public"."src_driver_location"
+  FROM KAFKA CONNECTION kafka_connection (TOPIC 'driver_location')
+  KEY FORMAT BYTES
+  VALUE FORMAT BYTES
+  ENVELOPE UPSERT
+  WITH (SIZE = '3xsmall');
+
+-- where id is not null
+[0m00:10:27.839768 [debug] [Thread-1 (]: SQL status: CREATE SOURCE in 1.18 seconds
+[0m00:10:27.843066 [debug] [Thread-1 (]: finished collecting timing info
+[0m00:10:27.843398 [debug] [Thread-1 (]: On model.onward_materialize.src_driver_location: Close
+[0m00:10:27.844322 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1c954ab1-e97e-4e79-8c25-92b1bdd0f0ee', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd712605ba0>]}
+[0m00:10:27.844762 [info ] [Thread-1 (]: 2 of 2 OK created sql source model public.src_driver_location .................. [[32mCREATE SOURCE[0m in 4.26s]
+[0m00:10:27.845196 [debug] [Thread-1 (]: Finished running node model.onward_materialize.src_driver_location
+[0m00:10:27.846479 [debug] [MainThread]: Acquiring new materialize connection "master"
+[0m00:10:27.847038 [info ] [MainThread]: 
+[0m00:10:27.847301 [info ] [MainThread]: Finished running 1 materializedview model, 1 source model in 0 hours 0 minutes and 9.07 seconds (9.07s).
+[0m00:10:27.847546 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m00:10:27.847674 [debug] [MainThread]: Connection 'model.onward_materialize.src_driver_location' was properly closed.
+[0m00:10:27.855466 [info ] [MainThread]: 
+[0m00:10:27.855723 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m00:10:27.855930 [info ] [MainThread]: 
+[0m00:10:27.856110 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m00:10:27.856352 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd712515270>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd712514f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd7125e4160>]}
+[0m00:10:27.856535 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2022-12-02 00:13:26.993051 | 9d097134-ef96-4b5b-a0b3-b2e9b65afc7b ==============================
+[0m00:13:26.993120 [info ] [MainThread]: Running with dbt=1.3.1
+[0m00:13:26.993848 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/claytonvanhovel/Desktop/onward-materialize-dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m00:13:26.993974 [debug] [MainThread]: Tracking: tracking
+[0m00:13:27.016904 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff6eabb1a50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff6eabb2230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff6eabb1b70>]}
+[0m00:13:27.061433 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m00:13:27.061750 [debug] [MainThread]: Partial parsing: updated file: onward_materialize://models/materializedviews/json_driver_location.sql
+[0m00:13:27.071565 [debug] [MainThread]: 1699: static parser successfully parsed materializedviews/json_driver_location.sql
+[0m00:13:27.093246 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '9d097134-ef96-4b5b-a0b3-b2e9b65afc7b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff6d83e40d0>]}
+[0m00:13:27.097895 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '9d097134-ef96-4b5b-a0b3-b2e9b65afc7b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff6ead17e50>]}
+[0m00:13:27.098090 [info ] [MainThread]: Found 2 models, 0 tests, 0 snapshots, 0 analyses, 307 macros, 0 operations, 0 seed files, 1 source, 0 exposures, 0 metrics
+[0m00:13:27.098257 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9d097134-ef96-4b5b-a0b3-b2e9b65afc7b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff6ead05c90>]}
+[0m00:13:27.099118 [info ] [MainThread]: 
+[0m00:13:27.099512 [debug] [MainThread]: Acquiring new materialize connection "master"
+[0m00:13:27.100177 [debug] [ThreadPool]: Acquiring new materialize connection "list_materialize"
+[0m00:13:27.107326 [debug] [ThreadPool]: Using materialize connection "list_materialize"
+[0m00:13:27.107518 [debug] [ThreadPool]: On list_materialize: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "connection_name": "list_materialize"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m00:13:27.107625 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:13:31.524551 [debug] [ThreadPool]: SQL status: SELECT 5 in 4.42 seconds
+[0m00:13:31.529179 [debug] [ThreadPool]: On list_materialize: Close
+[0m00:13:31.531806 [debug] [ThreadPool]: Acquiring new materialize connection "list_materialize_public"
+[0m00:13:31.539202 [debug] [ThreadPool]: Using materialize connection "list_materialize_public"
+[0m00:13:31.539433 [debug] [ThreadPool]: On list_materialize_public: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "connection_name": "list_materialize_public"} */
+select
+        d.name as database,
+        s.name as schema,
+        o.name,
+        case when o.type = 'materialized-view' then 'materializedview' else o.type end as type
+    from mz_objects o
+    join mz_schemas s on o.schema_id = s.id and s.name = 'public'
+    join mz_databases d on s.database_id = d.id and d.name = 'materialize'
+    where type in ('table', 'source', 'view', 'materialized-view', 'index', 'sink')
+  
+[0m00:13:31.539582 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m00:13:33.300094 [debug] [ThreadPool]: SQL status: SELECT 1 in 1.76 seconds
+[0m00:13:33.305861 [debug] [ThreadPool]: On list_materialize_public: Close
+[0m00:13:33.307290 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9d097134-ef96-4b5b-a0b3-b2e9b65afc7b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff6ead17fd0>]}
+[0m00:13:33.308104 [info ] [MainThread]: Concurrency: 1 threads (target='prod')
+[0m00:13:33.308429 [info ] [MainThread]: 
+[0m00:13:33.314296 [debug] [Thread-1 (]: Began running node model.onward_materialize.json_driver_location
+[0m00:13:33.314898 [info ] [Thread-1 (]: 1 of 2 START sql view model public.json_driver_location ........................ [RUN]
+[0m00:13:33.315624 [debug] [Thread-1 (]: Acquiring new materialize connection "model.onward_materialize.json_driver_location"
+[0m00:13:33.315801 [debug] [Thread-1 (]: Began compiling node model.onward_materialize.json_driver_location
+[0m00:13:33.315995 [debug] [Thread-1 (]: Compiling model.onward_materialize.json_driver_location
+[0m00:13:33.318117 [debug] [Thread-1 (]: Writing injected SQL for node "model.onward_materialize.json_driver_location"
+[0m00:13:33.319068 [debug] [Thread-1 (]: finished collecting timing info
+[0m00:13:33.319280 [debug] [Thread-1 (]: Began executing node model.onward_materialize.json_driver_location
+[0m00:13:33.334977 [debug] [Thread-1 (]: Writing runtime sql for node "model.onward_materialize.json_driver_location"
+[0m00:13:33.335510 [debug] [Thread-1 (]: Using materialize connection "model.onward_materialize.json_driver_location"
+[0m00:13:33.335651 [debug] [Thread-1 (]: On model.onward_materialize.json_driver_location: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "node_id": "model.onward_materialize.json_driver_location"} */
+create view "materialize"."public"."json_driver_location"
+  as (
+    SELECT
+    CONVERT_FROM(key, 'utf8') as key,
+    data->>'uid' AS uid,
+    to_timestamp(cast(data->>'timestamp' as double)) AS timestamp,
+    data->>'latitude' AS latitude,
+    data->>'longitude' AS longitude,
+    data->>'speed' AS speed
+  FROM (SELECT key, CONVERT_FROM(data, 'utf8')::jsonb AS data FROM driver_location)
+  );
+[0m00:13:33.335776 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m00:13:34.754847 [debug] [Thread-1 (]: Postgres adapter: Postgres error: unknown catalog item 'driver_location'
+
+[0m00:13:34.757694 [debug] [Thread-1 (]: finished collecting timing info
+[0m00:13:34.758122 [debug] [Thread-1 (]: On model.onward_materialize.json_driver_location: Close
+[0m00:13:34.760420 [debug] [Thread-1 (]: Database Error in model json_driver_location (models/materializedviews/json_driver_location.sql)
+  unknown catalog item 'driver_location'
+  compiled Code at target/run/onward_materialize/models/materializedviews/json_driver_location.sql
+[0m00:13:34.761164 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9d097134-ef96-4b5b-a0b3-b2e9b65afc7b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff6eace4790>]}
+[0m00:13:34.761884 [error] [Thread-1 (]: 1 of 2 ERROR creating sql view model public.json_driver_location ............... [[31mERROR[0m in 1.45s]
+[0m00:13:34.762939 [debug] [Thread-1 (]: Finished running node model.onward_materialize.json_driver_location
+[0m00:13:34.763178 [debug] [Thread-1 (]: Began running node model.onward_materialize.src_driver_location
+[0m00:13:34.763625 [info ] [Thread-1 (]: 2 of 2 START sql source model public.src_driver_location ....................... [RUN]
+[0m00:13:34.764427 [debug] [Thread-1 (]: Acquiring new materialize connection "model.onward_materialize.src_driver_location"
+[0m00:13:34.764606 [debug] [Thread-1 (]: Began compiling node model.onward_materialize.src_driver_location
+[0m00:13:34.764783 [debug] [Thread-1 (]: Compiling model.onward_materialize.src_driver_location
+[0m00:13:34.768527 [debug] [Thread-1 (]: Writing injected SQL for node "model.onward_materialize.src_driver_location"
+[0m00:13:34.769204 [debug] [Thread-1 (]: finished collecting timing info
+[0m00:13:34.769380 [debug] [Thread-1 (]: Began executing node model.onward_materialize.src_driver_location
+[0m00:13:34.785075 [debug] [Thread-1 (]: Using materialize connection "model.onward_materialize.src_driver_location"
+[0m00:13:34.785325 [debug] [Thread-1 (]: On model.onward_materialize.src_driver_location: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "node_id": "model.onward_materialize.src_driver_location"} */
+
+      drop source if exists "materialize"."public"."src_driver_location" cascade
+    
+[0m00:13:34.785453 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m00:13:36.302015 [debug] [Thread-1 (]: SQL status: DROP SOURCE in 1.52 seconds
+[0m00:13:36.307787 [debug] [Thread-1 (]: Writing runtime sql for node "model.onward_materialize.src_driver_location"
+[0m00:13:36.308436 [debug] [Thread-1 (]: Using materialize connection "model.onward_materialize.src_driver_location"
+[0m00:13:36.308574 [debug] [Thread-1 (]: On model.onward_materialize.src_driver_location: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "node_id": "model.onward_materialize.src_driver_location"} */
+
+
+CREATE SOURCE IF NOT EXISTS "materialize"."public"."src_driver_location"
+  FROM KAFKA CONNECTION kafka_connection (TOPIC 'driver_location')
+  KEY FORMAT BYTES
+  VALUE FORMAT BYTES
+  ENVELOPE UPSERT
+  WITH (SIZE = '3xsmall');
+
+-- where id is not null
+[0m00:13:37.362723 [debug] [Thread-1 (]: SQL status: CREATE SOURCE in 1.05 seconds
+[0m00:13:37.380088 [debug] [Thread-1 (]: finished collecting timing info
+[0m00:13:37.380534 [debug] [Thread-1 (]: On model.onward_materialize.src_driver_location: Close
+[0m00:13:37.381632 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9d097134-ef96-4b5b-a0b3-b2e9b65afc7b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff6d848fee0>]}
+[0m00:13:37.382105 [info ] [Thread-1 (]: 2 of 2 OK created sql source model public.src_driver_location .................. [[32mCREATE SOURCE[0m in 2.62s]
+[0m00:13:37.382622 [debug] [Thread-1 (]: Finished running node model.onward_materialize.src_driver_location
+[0m00:13:37.384139 [debug] [MainThread]: Acquiring new materialize connection "master"
+[0m00:13:37.384719 [info ] [MainThread]: 
+[0m00:13:37.385003 [info ] [MainThread]: Finished running 1 view model, 1 source model in 0 hours 0 minutes and 10.29 seconds (10.29s).
+[0m00:13:37.385256 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m00:13:37.385444 [debug] [MainThread]: Connection 'model.onward_materialize.src_driver_location' was properly closed.
+[0m00:13:37.394601 [info ] [MainThread]: 
+[0m00:13:37.394911 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m00:13:37.395166 [info ] [MainThread]: 
+[0m00:13:37.395394 [error] [MainThread]: [33mDatabase Error in model json_driver_location (models/materializedviews/json_driver_location.sql)[0m
+[0m00:13:37.395615 [error] [MainThread]:   unknown catalog item 'driver_location'
+[0m00:13:37.395807 [error] [MainThread]:   compiled Code at target/run/onward_materialize/models/materializedviews/json_driver_location.sql
+[0m00:13:37.395971 [info ] [MainThread]: 
+[0m00:13:37.396369 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=1 SKIP=0 TOTAL=2
+[0m00:13:37.396869 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff6ead05c90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff6d8495750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff6d8496590>]}
+[0m00:13:37.397150 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2022-12-02 00:14:06.068000 | 54214db4-7f46-4268-af4b-8b0d0e50b340 ==============================
+[0m00:14:06.068058 [info ] [MainThread]: Running with dbt=1.3.1
+[0m00:14:06.068572 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/claytonvanhovel/Desktop/onward-materialize-dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m00:14:06.068694 [debug] [MainThread]: Tracking: tracking
+[0m00:14:06.090423 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb3489f9d20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb3489f9600>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb3489fb100>]}
+[0m00:14:06.130245 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m00:14:06.130582 [debug] [MainThread]: Partial parsing: updated file: onward_materialize://models/materializedviews/json_driver_location.sql
+[0m00:14:06.139900 [debug] [MainThread]: 1699: static parser successfully parsed materializedviews/json_driver_location.sql
+[0m00:14:06.161140 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '54214db4-7f46-4268-af4b-8b0d0e50b340', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb378c680d0>]}
+[0m00:14:06.165974 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '54214db4-7f46-4268-af4b-8b0d0e50b340', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb378b9c910>]}
+[0m00:14:06.166179 [info ] [MainThread]: Found 2 models, 0 tests, 0 snapshots, 0 analyses, 307 macros, 0 operations, 0 seed files, 1 source, 0 exposures, 0 metrics
+[0m00:14:06.166355 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '54214db4-7f46-4268-af4b-8b0d0e50b340', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb378bb9c00>]}
+[0m00:14:06.167228 [info ] [MainThread]: 
+[0m00:14:06.167648 [debug] [MainThread]: Acquiring new materialize connection "master"
+[0m00:14:06.168313 [debug] [ThreadPool]: Acquiring new materialize connection "list_materialize"
+[0m00:14:06.175658 [debug] [ThreadPool]: Using materialize connection "list_materialize"
+[0m00:14:06.175833 [debug] [ThreadPool]: On list_materialize: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "connection_name": "list_materialize"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m00:14:06.175928 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:14:07.633353 [debug] [ThreadPool]: SQL status: SELECT 5 in 1.46 seconds
+[0m00:14:07.638965 [debug] [ThreadPool]: On list_materialize: Close
+[0m00:14:07.641646 [debug] [ThreadPool]: Acquiring new materialize connection "list_materialize_public"
+[0m00:14:07.649196 [debug] [ThreadPool]: Using materialize connection "list_materialize_public"
+[0m00:14:07.649424 [debug] [ThreadPool]: On list_materialize_public: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "connection_name": "list_materialize_public"} */
+select
+        d.name as database,
+        s.name as schema,
+        o.name,
+        case when o.type = 'materialized-view' then 'materializedview' else o.type end as type
+    from mz_objects o
+    join mz_schemas s on o.schema_id = s.id and s.name = 'public'
+    join mz_databases d on s.database_id = d.id and d.name = 'materialize'
+    where type in ('table', 'source', 'view', 'materialized-view', 'index', 'sink')
+  
+[0m00:14:07.649609 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m00:14:09.362240 [debug] [ThreadPool]: SQL status: SELECT 1 in 1.71 seconds
+[0m00:14:09.370297 [debug] [ThreadPool]: On list_materialize_public: Close
+[0m00:14:09.372111 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '54214db4-7f46-4268-af4b-8b0d0e50b340', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb378bcfd60>]}
+[0m00:14:09.372972 [info ] [MainThread]: Concurrency: 1 threads (target='prod')
+[0m00:14:09.373305 [info ] [MainThread]: 
+[0m00:14:09.377815 [debug] [Thread-1 (]: Began running node model.onward_materialize.src_driver_location
+[0m00:14:09.378419 [info ] [Thread-1 (]: 1 of 2 START sql source model public.src_driver_location ....................... [RUN]
+[0m00:14:09.379115 [debug] [Thread-1 (]: Acquiring new materialize connection "model.onward_materialize.src_driver_location"
+[0m00:14:09.379299 [debug] [Thread-1 (]: Began compiling node model.onward_materialize.src_driver_location
+[0m00:14:09.379490 [debug] [Thread-1 (]: Compiling model.onward_materialize.src_driver_location
+[0m00:14:09.383418 [debug] [Thread-1 (]: Writing injected SQL for node "model.onward_materialize.src_driver_location"
+[0m00:14:09.384326 [debug] [Thread-1 (]: finished collecting timing info
+[0m00:14:09.384525 [debug] [Thread-1 (]: Began executing node model.onward_materialize.src_driver_location
+[0m00:14:09.400767 [debug] [Thread-1 (]: Using materialize connection "model.onward_materialize.src_driver_location"
+[0m00:14:09.401005 [debug] [Thread-1 (]: On model.onward_materialize.src_driver_location: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "node_id": "model.onward_materialize.src_driver_location"} */
+
+      drop source if exists "materialize"."public"."src_driver_location" cascade
+    
+[0m00:14:09.401127 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m00:14:10.826019 [debug] [Thread-1 (]: SQL status: DROP SOURCE in 1.42 seconds
+[0m00:14:10.839087 [debug] [Thread-1 (]: Writing runtime sql for node "model.onward_materialize.src_driver_location"
+[0m00:14:10.840018 [debug] [Thread-1 (]: Using materialize connection "model.onward_materialize.src_driver_location"
+[0m00:14:10.840188 [debug] [Thread-1 (]: On model.onward_materialize.src_driver_location: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "node_id": "model.onward_materialize.src_driver_location"} */
+
+
+CREATE SOURCE IF NOT EXISTS "materialize"."public"."src_driver_location"
+  FROM KAFKA CONNECTION kafka_connection (TOPIC 'driver_location')
+  KEY FORMAT BYTES
+  VALUE FORMAT BYTES
+  ENVELOPE UPSERT
+  WITH (SIZE = '3xsmall');
+
+-- where id is not null
+[0m00:14:11.879049 [debug] [Thread-1 (]: SQL status: CREATE SOURCE in 1.04 seconds
+[0m00:14:11.896013 [debug] [Thread-1 (]: finished collecting timing info
+[0m00:14:11.896407 [debug] [Thread-1 (]: On model.onward_materialize.src_driver_location: Close
+[0m00:14:11.897550 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '54214db4-7f46-4268-af4b-8b0d0e50b340', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb378bcfd60>]}
+[0m00:14:11.898057 [info ] [Thread-1 (]: 1 of 2 OK created sql source model public.src_driver_location .................. [[32mCREATE SOURCE[0m in 2.52s]
+[0m00:14:11.898875 [debug] [Thread-1 (]: Finished running node model.onward_materialize.src_driver_location
+[0m00:14:11.899646 [debug] [Thread-1 (]: Began running node model.onward_materialize.json_driver_location
+[0m00:14:11.899895 [info ] [Thread-1 (]: 2 of 2 START sql view model public.json_driver_location ........................ [RUN]
+[0m00:14:11.900498 [debug] [Thread-1 (]: Acquiring new materialize connection "model.onward_materialize.json_driver_location"
+[0m00:14:11.900661 [debug] [Thread-1 (]: Began compiling node model.onward_materialize.json_driver_location
+[0m00:14:11.900816 [debug] [Thread-1 (]: Compiling model.onward_materialize.json_driver_location
+[0m00:14:11.904214 [debug] [Thread-1 (]: Writing injected SQL for node "model.onward_materialize.json_driver_location"
+[0m00:14:11.904952 [debug] [Thread-1 (]: finished collecting timing info
+[0m00:14:11.905121 [debug] [Thread-1 (]: Began executing node model.onward_materialize.json_driver_location
+[0m00:14:11.914816 [debug] [Thread-1 (]: Writing runtime sql for node "model.onward_materialize.json_driver_location"
+[0m00:14:11.915225 [debug] [Thread-1 (]: Using materialize connection "model.onward_materialize.json_driver_location"
+[0m00:14:11.915336 [debug] [Thread-1 (]: On model.onward_materialize.json_driver_location: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "node_id": "model.onward_materialize.json_driver_location"} */
+create view "materialize"."public"."json_driver_location"
+  as (
+    SELECT
+    CONVERT_FROM(key, 'utf8') as key,
+    data->>'uid' AS uid,
+    to_timestamp(cast(data->>'timestamp' as double)) AS timestamp,
+    data->>'latitude' AS latitude,
+    data->>'longitude' AS longitude,
+    data->>'speed' AS speed
+  FROM (SELECT key, CONVERT_FROM(data, 'utf8')::jsonb AS data FROM "materialize"."public"."src_driver_location"
+  );
+[0m00:14:11.915434 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m00:14:13.308070 [debug] [Thread-1 (]: Postgres adapter: Postgres error: Expected right parenthesis, found semicolon
+LINE 12:   );
+            ^
+
+[0m00:14:13.310081 [debug] [Thread-1 (]: finished collecting timing info
+[0m00:14:13.310495 [debug] [Thread-1 (]: On model.onward_materialize.json_driver_location: Close
+[0m00:14:13.312125 [debug] [Thread-1 (]: Database Error in model json_driver_location (models/materializedviews/json_driver_location.sql)
+  Expected right parenthesis, found semicolon
+  LINE 12:   );
+              ^
+  compiled Code at target/run/onward_materialize/models/materializedviews/json_driver_location.sql
+[0m00:14:13.312683 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '54214db4-7f46-4268-af4b-8b0d0e50b340', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb378d20e20>]}
+[0m00:14:13.313175 [error] [Thread-1 (]: 2 of 2 ERROR creating sql view model public.json_driver_location ............... [[31mERROR[0m in 1.41s]
+[0m00:14:13.313711 [debug] [Thread-1 (]: Finished running node model.onward_materialize.json_driver_location
+[0m00:14:13.315352 [debug] [MainThread]: Acquiring new materialize connection "master"
+[0m00:14:13.316011 [info ] [MainThread]: 
+[0m00:14:13.316310 [info ] [MainThread]: Finished running 1 source model, 1 view model in 0 hours 0 minutes and 7.15 seconds (7.15s).
+[0m00:14:13.316625 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m00:14:13.316760 [debug] [MainThread]: Connection 'model.onward_materialize.json_driver_location' was properly closed.
+[0m00:14:13.325457 [info ] [MainThread]: 
+[0m00:14:13.325746 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m00:14:13.326008 [info ] [MainThread]: 
+[0m00:14:13.326240 [error] [MainThread]: [33mDatabase Error in model json_driver_location (models/materializedviews/json_driver_location.sql)[0m
+[0m00:14:13.326480 [error] [MainThread]:   Expected right parenthesis, found semicolon
+[0m00:14:13.326720 [error] [MainThread]:   LINE 12:   );
+[0m00:14:13.326967 [error] [MainThread]:               ^
+[0m00:14:13.327210 [error] [MainThread]:   compiled Code at target/run/onward_materialize/models/materializedviews/json_driver_location.sql
+[0m00:14:13.327440 [info ] [MainThread]: 
+[0m00:14:13.327670 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=1 SKIP=0 TOTAL=2
+[0m00:14:13.328016 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb378bb9c00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb378d03280>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb378d00700>]}
+[0m00:14:13.328280 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2022-12-02 00:14:31.210445 | 8f579815-62b1-41dc-a6e3-9f61e0fac170 ==============================
+[0m00:14:31.210517 [info ] [MainThread]: Running with dbt=1.3.1
+[0m00:14:31.211161 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/claytonvanhovel/Desktop/onward-materialize-dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m00:14:31.211276 [debug] [MainThread]: Tracking: tracking
+[0m00:14:31.230724 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fca691a5660>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fca691a5e40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fca691a5780>]}
+[0m00:14:31.270850 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m00:14:31.271034 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m00:14:31.275855 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '8f579815-62b1-41dc-a6e3-9f61e0fac170', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fca693b0280>]}
+[0m00:14:31.280851 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '8f579815-62b1-41dc-a6e3-9f61e0fac170', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fca69381240>]}
+[0m00:14:31.281067 [info ] [MainThread]: Found 2 models, 0 tests, 0 snapshots, 0 analyses, 307 macros, 0 operations, 0 seed files, 1 source, 0 exposures, 0 metrics
+[0m00:14:31.281235 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8f579815-62b1-41dc-a6e3-9f61e0fac170', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fca69381270>]}
+[0m00:14:31.282208 [info ] [MainThread]: 
+[0m00:14:31.282622 [debug] [MainThread]: Acquiring new materialize connection "master"
+[0m00:14:31.283393 [debug] [ThreadPool]: Acquiring new materialize connection "list_materialize"
+[0m00:14:31.291049 [debug] [ThreadPool]: Using materialize connection "list_materialize"
+[0m00:14:31.291200 [debug] [ThreadPool]: On list_materialize: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "connection_name": "list_materialize"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m00:14:31.291295 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:14:32.654058 [debug] [ThreadPool]: SQL status: SELECT 5 in 1.36 seconds
+[0m00:14:32.660379 [debug] [ThreadPool]: On list_materialize: Close
+[0m00:14:32.662984 [debug] [ThreadPool]: Acquiring new materialize connection "list_materialize_public"
+[0m00:14:32.670851 [debug] [ThreadPool]: Using materialize connection "list_materialize_public"
+[0m00:14:32.671091 [debug] [ThreadPool]: On list_materialize_public: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "connection_name": "list_materialize_public"} */
+select
+        d.name as database,
+        s.name as schema,
+        o.name,
+        case when o.type = 'materialized-view' then 'materializedview' else o.type end as type
+    from mz_objects o
+    join mz_schemas s on o.schema_id = s.id and s.name = 'public'
+    join mz_databases d on s.database_id = d.id and d.name = 'materialize'
+    where type in ('table', 'source', 'view', 'materialized-view', 'index', 'sink')
+  
+[0m00:14:32.671259 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m00:14:34.339151 [debug] [ThreadPool]: SQL status: SELECT 1 in 1.67 seconds
+[0m00:14:34.340786 [debug] [ThreadPool]: On list_materialize_public: Close
+[0m00:14:34.341760 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8f579815-62b1-41dc-a6e3-9f61e0fac170', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fca693efc10>]}
+[0m00:14:34.342386 [info ] [MainThread]: Concurrency: 1 threads (target='prod')
+[0m00:14:34.342641 [info ] [MainThread]: 
+[0m00:14:34.345565 [debug] [Thread-1 (]: Began running node model.onward_materialize.src_driver_location
+[0m00:14:34.346136 [info ] [Thread-1 (]: 1 of 2 START sql source model public.src_driver_location ....................... [RUN]
+[0m00:14:34.346783 [debug] [Thread-1 (]: Acquiring new materialize connection "model.onward_materialize.src_driver_location"
+[0m00:14:34.346973 [debug] [Thread-1 (]: Began compiling node model.onward_materialize.src_driver_location
+[0m00:14:34.347126 [debug] [Thread-1 (]: Compiling model.onward_materialize.src_driver_location
+[0m00:14:34.349814 [debug] [Thread-1 (]: Writing injected SQL for node "model.onward_materialize.src_driver_location"
+[0m00:14:34.350280 [debug] [Thread-1 (]: finished collecting timing info
+[0m00:14:34.350427 [debug] [Thread-1 (]: Began executing node model.onward_materialize.src_driver_location
+[0m00:14:34.363274 [debug] [Thread-1 (]: Using materialize connection "model.onward_materialize.src_driver_location"
+[0m00:14:34.363521 [debug] [Thread-1 (]: On model.onward_materialize.src_driver_location: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "node_id": "model.onward_materialize.src_driver_location"} */
+
+      drop source if exists "materialize"."public"."src_driver_location" cascade
+    
+[0m00:14:34.363631 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m00:14:35.911682 [debug] [Thread-1 (]: SQL status: DROP SOURCE in 1.55 seconds
+[0m00:14:35.924994 [debug] [Thread-1 (]: Writing runtime sql for node "model.onward_materialize.src_driver_location"
+[0m00:14:35.926106 [debug] [Thread-1 (]: Using materialize connection "model.onward_materialize.src_driver_location"
+[0m00:14:35.926282 [debug] [Thread-1 (]: On model.onward_materialize.src_driver_location: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "node_id": "model.onward_materialize.src_driver_location"} */
+
+
+CREATE SOURCE IF NOT EXISTS "materialize"."public"."src_driver_location"
+  FROM KAFKA CONNECTION kafka_connection (TOPIC 'driver_location')
+  KEY FORMAT BYTES
+  VALUE FORMAT BYTES
+  ENVELOPE UPSERT
+  WITH (SIZE = '3xsmall');
+
+-- where id is not null
+[0m00:14:37.042832 [debug] [Thread-1 (]: SQL status: CREATE SOURCE in 1.12 seconds
+[0m00:14:37.055590 [debug] [Thread-1 (]: finished collecting timing info
+[0m00:14:37.055854 [debug] [Thread-1 (]: On model.onward_materialize.src_driver_location: Close
+[0m00:14:37.056584 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '8f579815-62b1-41dc-a6e3-9f61e0fac170', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fca693efc10>]}
+[0m00:14:37.056935 [info ] [Thread-1 (]: 1 of 2 OK created sql source model public.src_driver_location .................. [[32mCREATE SOURCE[0m in 2.71s]
+[0m00:14:37.057604 [debug] [Thread-1 (]: Finished running node model.onward_materialize.src_driver_location
+[0m00:14:37.058168 [debug] [Thread-1 (]: Began running node model.onward_materialize.json_driver_location
+[0m00:14:37.058409 [info ] [Thread-1 (]: 2 of 2 START sql view model public.json_driver_location ........................ [RUN]
+[0m00:14:37.058974 [debug] [Thread-1 (]: Acquiring new materialize connection "model.onward_materialize.json_driver_location"
+[0m00:14:37.059118 [debug] [Thread-1 (]: Began compiling node model.onward_materialize.json_driver_location
+[0m00:14:37.059255 [debug] [Thread-1 (]: Compiling model.onward_materialize.json_driver_location
+[0m00:14:37.061958 [debug] [Thread-1 (]: Writing injected SQL for node "model.onward_materialize.json_driver_location"
+[0m00:14:37.062367 [debug] [Thread-1 (]: finished collecting timing info
+[0m00:14:37.062498 [debug] [Thread-1 (]: Began executing node model.onward_materialize.json_driver_location
+[0m00:14:37.071924 [debug] [Thread-1 (]: Writing runtime sql for node "model.onward_materialize.json_driver_location"
+[0m00:14:37.072311 [debug] [Thread-1 (]: Using materialize connection "model.onward_materialize.json_driver_location"
+[0m00:14:37.072427 [debug] [Thread-1 (]: On model.onward_materialize.json_driver_location: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "node_id": "model.onward_materialize.json_driver_location"} */
+create view "materialize"."public"."json_driver_location"
+  as (
+    SELECT
+    CONVERT_FROM(key, 'utf8') as key,
+    data->>'uid' AS uid,
+    to_timestamp(cast(data->>'timestamp' as double)) AS timestamp,
+    data->>'latitude' AS latitude,
+    data->>'longitude' AS longitude,
+    data->>'speed' AS speed
+  FROM (SELECT key, CONVERT_FROM(data, 'utf8')::jsonb AS data FROM "materialize"."public"."src_driver_location"
+  );
+[0m00:14:37.072528 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m00:14:38.408545 [debug] [Thread-1 (]: Postgres adapter: Postgres error: Expected right parenthesis, found semicolon
+LINE 12:   );
+            ^
+
+[0m00:14:38.410119 [debug] [Thread-1 (]: finished collecting timing info
+[0m00:14:38.410441 [debug] [Thread-1 (]: On model.onward_materialize.json_driver_location: Close
+[0m00:14:38.411799 [debug] [Thread-1 (]: Database Error in model json_driver_location (models/materializedviews/json_driver_location.sql)
+  Expected right parenthesis, found semicolon
+  LINE 12:   );
+              ^
+  compiled Code at target/run/onward_materialize/models/materializedviews/json_driver_location.sql
+[0m00:14:38.412261 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '8f579815-62b1-41dc-a6e3-9f61e0fac170', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fca69418520>]}
+[0m00:14:38.412687 [error] [Thread-1 (]: 2 of 2 ERROR creating sql view model public.json_driver_location ............... [[31mERROR[0m in 1.35s]
+[0m00:14:38.413135 [debug] [Thread-1 (]: Finished running node model.onward_materialize.json_driver_location
+[0m00:14:38.414319 [debug] [MainThread]: Acquiring new materialize connection "master"
+[0m00:14:38.414936 [info ] [MainThread]: 
+[0m00:14:38.415221 [info ] [MainThread]: Finished running 1 source model, 1 view model in 0 hours 0 minutes and 7.13 seconds (7.13s).
+[0m00:14:38.415491 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m00:14:38.415620 [debug] [MainThread]: Connection 'model.onward_materialize.json_driver_location' was properly closed.
+[0m00:14:38.424588 [info ] [MainThread]: 
+[0m00:14:38.424951 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m00:14:38.425231 [info ] [MainThread]: 
+[0m00:14:38.425473 [error] [MainThread]: [33mDatabase Error in model json_driver_location (models/materializedviews/json_driver_location.sql)[0m
+[0m00:14:38.425717 [error] [MainThread]:   Expected right parenthesis, found semicolon
+[0m00:14:38.425954 [error] [MainThread]:   LINE 12:   );
+[0m00:14:38.426182 [error] [MainThread]:               ^
+[0m00:14:38.426406 [error] [MainThread]:   compiled Code at target/run/onward_materialize/models/materializedviews/json_driver_location.sql
+[0m00:14:38.426642 [info ] [MainThread]: 
+[0m00:14:38.426878 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=1 SKIP=0 TOTAL=2
+[0m00:14:38.427255 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fca69380e80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fca69380dc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fca6941a170>]}
+[0m00:14:38.427549 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2022-12-02 00:14:51.055795 | b5470d84-a2b2-44ca-91f8-cc91940babfa ==============================
+[0m00:14:51.055921 [info ] [MainThread]: Running with dbt=1.3.1
+[0m00:14:51.056445 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/claytonvanhovel/Desktop/onward-materialize-dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m00:14:51.056568 [debug] [MainThread]: Tracking: tracking
+[0m00:14:51.075800 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fedf9739e40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fedf9739660>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fedf9739d20>]}
+[0m00:14:51.114997 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m00:14:51.115349 [debug] [MainThread]: Partial parsing: updated file: onward_materialize://models/materializedviews/json_driver_location.sql
+[0m00:14:51.124860 [debug] [MainThread]: 1699: static parser successfully parsed materializedviews/json_driver_location.sql
+[0m00:14:51.147344 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b5470d84-a2b2-44ca-91f8-cc91940babfa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fedc81d80d0>]}
+[0m00:14:51.152428 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b5470d84-a2b2-44ca-91f8-cc91940babfa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fedc813bd60>]}
+[0m00:14:51.152639 [info ] [MainThread]: Found 2 models, 0 tests, 0 snapshots, 0 analyses, 307 macros, 0 operations, 0 seed files, 1 source, 0 exposures, 0 metrics
+[0m00:14:51.152815 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b5470d84-a2b2-44ca-91f8-cc91940babfa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fedc8129c90>]}
+[0m00:14:51.153740 [info ] [MainThread]: 
+[0m00:14:51.154146 [debug] [MainThread]: Acquiring new materialize connection "master"
+[0m00:14:51.154908 [debug] [ThreadPool]: Acquiring new materialize connection "list_materialize"
+[0m00:14:51.162450 [debug] [ThreadPool]: Using materialize connection "list_materialize"
+[0m00:14:51.162628 [debug] [ThreadPool]: On list_materialize: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "connection_name": "list_materialize"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m00:14:51.162721 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:14:52.529277 [debug] [ThreadPool]: SQL status: SELECT 5 in 1.37 seconds
+[0m00:14:52.534473 [debug] [ThreadPool]: On list_materialize: Close
+[0m00:14:52.537000 [debug] [ThreadPool]: Acquiring new materialize connection "list_materialize_public"
+[0m00:14:52.544706 [debug] [ThreadPool]: Using materialize connection "list_materialize_public"
+[0m00:14:52.544938 [debug] [ThreadPool]: On list_materialize_public: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "connection_name": "list_materialize_public"} */
+select
+        d.name as database,
+        s.name as schema,
+        o.name,
+        case when o.type = 'materialized-view' then 'materializedview' else o.type end as type
+    from mz_objects o
+    join mz_schemas s on o.schema_id = s.id and s.name = 'public'
+    join mz_databases d on s.database_id = d.id and d.name = 'materialize'
+    where type in ('table', 'source', 'view', 'materialized-view', 'index', 'sink')
+  
+[0m00:14:52.545092 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m00:14:54.353973 [debug] [ThreadPool]: SQL status: SELECT 1 in 1.81 seconds
+[0m00:14:54.360675 [debug] [ThreadPool]: On list_materialize_public: Close
+[0m00:14:54.362314 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b5470d84-a2b2-44ca-91f8-cc91940babfa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fedc813bfd0>]}
+[0m00:14:54.363074 [info ] [MainThread]: Concurrency: 1 threads (target='prod')
+[0m00:14:54.363330 [info ] [MainThread]: 
+[0m00:14:54.367854 [debug] [Thread-1 (]: Began running node model.onward_materialize.src_driver_location
+[0m00:14:54.368516 [info ] [Thread-1 (]: 1 of 2 START sql source model public.src_driver_location ....................... [RUN]
+[0m00:14:54.369272 [debug] [Thread-1 (]: Acquiring new materialize connection "model.onward_materialize.src_driver_location"
+[0m00:14:54.369472 [debug] [Thread-1 (]: Began compiling node model.onward_materialize.src_driver_location
+[0m00:14:54.369690 [debug] [Thread-1 (]: Compiling model.onward_materialize.src_driver_location
+[0m00:14:54.373634 [debug] [Thread-1 (]: Writing injected SQL for node "model.onward_materialize.src_driver_location"
+[0m00:14:54.374484 [debug] [Thread-1 (]: finished collecting timing info
+[0m00:14:54.374688 [debug] [Thread-1 (]: Began executing node model.onward_materialize.src_driver_location
+[0m00:14:54.390573 [debug] [Thread-1 (]: Using materialize connection "model.onward_materialize.src_driver_location"
+[0m00:14:54.390812 [debug] [Thread-1 (]: On model.onward_materialize.src_driver_location: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "node_id": "model.onward_materialize.src_driver_location"} */
+
+      drop source if exists "materialize"."public"."src_driver_location" cascade
+    
+[0m00:14:54.390946 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m00:14:55.816188 [debug] [Thread-1 (]: SQL status: DROP SOURCE in 1.43 seconds
+[0m00:14:55.831361 [debug] [Thread-1 (]: Writing runtime sql for node "model.onward_materialize.src_driver_location"
+[0m00:14:55.832307 [debug] [Thread-1 (]: Using materialize connection "model.onward_materialize.src_driver_location"
+[0m00:14:55.832482 [debug] [Thread-1 (]: On model.onward_materialize.src_driver_location: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "node_id": "model.onward_materialize.src_driver_location"} */
+
+
+CREATE SOURCE IF NOT EXISTS "materialize"."public"."src_driver_location"
+  FROM KAFKA CONNECTION kafka_connection (TOPIC 'driver_location')
+  KEY FORMAT BYTES
+  VALUE FORMAT BYTES
+  ENVELOPE UPSERT
+  WITH (SIZE = '3xsmall');
+
+-- where id is not null
+[0m00:14:56.865228 [debug] [Thread-1 (]: SQL status: CREATE SOURCE in 1.03 seconds
+[0m00:14:56.881487 [debug] [Thread-1 (]: finished collecting timing info
+[0m00:14:56.881872 [debug] [Thread-1 (]: On model.onward_materialize.src_driver_location: Close
+[0m00:14:56.883044 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b5470d84-a2b2-44ca-91f8-cc91940babfa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fedc810c880>]}
+[0m00:14:56.883559 [info ] [Thread-1 (]: 1 of 2 OK created sql source model public.src_driver_location .................. [[32mCREATE SOURCE[0m in 2.51s]
+[0m00:14:56.884516 [debug] [Thread-1 (]: Finished running node model.onward_materialize.src_driver_location
+[0m00:14:56.885407 [debug] [Thread-1 (]: Began running node model.onward_materialize.json_driver_location
+[0m00:14:56.885737 [info ] [Thread-1 (]: 2 of 2 START sql view model public.json_driver_location ........................ [RUN]
+[0m00:14:56.886485 [debug] [Thread-1 (]: Acquiring new materialize connection "model.onward_materialize.json_driver_location"
+[0m00:14:56.886683 [debug] [Thread-1 (]: Began compiling node model.onward_materialize.json_driver_location
+[0m00:14:56.886852 [debug] [Thread-1 (]: Compiling model.onward_materialize.json_driver_location
+[0m00:14:56.890190 [debug] [Thread-1 (]: Writing injected SQL for node "model.onward_materialize.json_driver_location"
+[0m00:14:56.890902 [debug] [Thread-1 (]: finished collecting timing info
+[0m00:14:56.891082 [debug] [Thread-1 (]: Began executing node model.onward_materialize.json_driver_location
+[0m00:14:56.900871 [debug] [Thread-1 (]: Writing runtime sql for node "model.onward_materialize.json_driver_location"
+[0m00:14:56.901347 [debug] [Thread-1 (]: Using materialize connection "model.onward_materialize.json_driver_location"
+[0m00:14:56.901474 [debug] [Thread-1 (]: On model.onward_materialize.json_driver_location: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "node_id": "model.onward_materialize.json_driver_location"} */
+create view "materialize"."public"."json_driver_location"
+  as (
+    SELECT
+    CONVERT_FROM(key, 'utf8') as key,
+    data->>'uid' AS uid,
+    to_timestamp(cast(data->>'timestamp' as double)) AS timestamp,
+    data->>'latitude' AS latitude,
+    data->>'longitude' AS longitude,
+    data->>'speed' AS speed
+  FROM (SELECT key, CONVERT_FROM(data, 'utf8')::jsonb AS data FROM "materialize"."public"."src_driver_location")
+  );
+[0m00:14:56.901586 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m00:14:58.274447 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 1.37 seconds
+[0m00:14:58.280115 [debug] [Thread-1 (]: finished collecting timing info
+[0m00:14:58.280529 [debug] [Thread-1 (]: On model.onward_materialize.json_driver_location: Close
+[0m00:14:58.281665 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b5470d84-a2b2-44ca-91f8-cc91940babfa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fedc828d540>]}
+[0m00:14:58.282405 [info ] [Thread-1 (]: 2 of 2 OK created sql view model public.json_driver_location ................... [[32mCREATE VIEW[0m in 1.40s]
+[0m00:14:58.282953 [debug] [Thread-1 (]: Finished running node model.onward_materialize.json_driver_location
+[0m00:14:58.284437 [debug] [MainThread]: Acquiring new materialize connection "master"
+[0m00:14:58.285048 [info ] [MainThread]: 
+[0m00:14:58.285347 [info ] [MainThread]: Finished running 1 source model, 1 view model in 0 hours 0 minutes and 7.13 seconds (7.13s).
+[0m00:14:58.285626 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m00:14:58.285757 [debug] [MainThread]: Connection 'model.onward_materialize.json_driver_location' was properly closed.
+[0m00:14:58.295095 [info ] [MainThread]: 
+[0m00:14:58.295371 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m00:14:58.295650 [info ] [MainThread]: 
+[0m00:14:58.295892 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m00:14:58.296240 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fedc8129c90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fedc8275240>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fedc8274ca0>]}
+[0m00:14:58.296482 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2022-12-02 15:03:47.471421 | 47f5aa6a-faef-424b-8a04-f7040fd3521d ==============================
+[0m15:03:47.471478 [info ] [MainThread]: Running with dbt=1.3.1
+[0m15:03:47.472349 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/claytonvanhovel/Desktop/onward-materialize-dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m15:03:47.472502 [debug] [MainThread]: Tracking: tracking
+[0m15:03:47.500694 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbb8a8d2950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbb8a8d30d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbb8a8d1600>]}
+[0m15:03:47.547346 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 2 files changed.
+[0m15:03:47.547643 [debug] [MainThread]: Partial parsing: deleted source source.onward_materialize.kafka.src_driver_location
+[0m15:03:47.547741 [debug] [MainThread]: Partial parsing: update schema file: onward_materialize://models/schema.yml
+[0m15:03:47.547906 [debug] [MainThread]: Partial parsing: updated file: onward_materialize://models/sources/src_driver_location.sql
+[0m15:03:47.559081 [debug] [MainThread]: 1603: static parser failed on sources/src_driver_location.sql
+[0m15:03:47.569576 [debug] [MainThread]: 1602: parser fallback to jinja rendering on sources/src_driver_location.sql
+[0m15:03:47.584811 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '47f5aa6a-faef-424b-8a04-f7040fd3521d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbb8aa06650>]}
+[0m15:03:47.590580 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '47f5aa6a-faef-424b-8a04-f7040fd3521d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbb8a9d3e20>]}
+[0m15:03:47.590798 [info ] [MainThread]: Found 2 models, 0 tests, 0 snapshots, 0 analyses, 307 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+[0m15:03:47.590971 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '47f5aa6a-faef-424b-8a04-f7040fd3521d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbb8a9d3e80>]}
+[0m15:03:47.591815 [info ] [MainThread]: 
+[0m15:03:47.592197 [debug] [MainThread]: Acquiring new materialize connection "master"
+[0m15:03:47.592879 [debug] [ThreadPool]: Acquiring new materialize connection "list_materialize"
+[0m15:03:47.599849 [debug] [ThreadPool]: Using materialize connection "list_materialize"
+[0m15:03:47.599963 [debug] [ThreadPool]: On list_materialize: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "connection_name": "list_materialize"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:03:47.600050 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:03:50.231527 [debug] [ThreadPool]: SQL status: SELECT 5 in 2.63 seconds
+[0m15:03:50.238470 [debug] [ThreadPool]: On list_materialize: Close
+[0m15:03:50.242329 [debug] [ThreadPool]: Acquiring new materialize connection "list_materialize_public"
+[0m15:03:50.251944 [debug] [ThreadPool]: Using materialize connection "list_materialize_public"
+[0m15:03:50.252197 [debug] [ThreadPool]: On list_materialize_public: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "connection_name": "list_materialize_public"} */
+select
+        d.name as database,
+        s.name as schema,
+        o.name,
+        case when o.type = 'materialized-view' then 'materializedview' else o.type end as type
+    from mz_objects o
+    join mz_schemas s on o.schema_id = s.id and s.name = 'public'
+    join mz_databases d on s.database_id = d.id and d.name = 'materialize'
+    where type in ('table', 'source', 'view', 'materialized-view', 'index', 'sink')
+  
+[0m15:03:50.252371 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:03:51.645105 [debug] [ThreadPool]: SQL status: SELECT 0 in 1.39 seconds
+[0m15:03:51.650942 [debug] [ThreadPool]: On list_materialize_public: Close
+[0m15:03:51.652975 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '47f5aa6a-faef-424b-8a04-f7040fd3521d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbb8a8d1ae0>]}
+[0m15:03:51.654142 [info ] [MainThread]: Concurrency: 1 threads (target='prod')
+[0m15:03:51.654567 [info ] [MainThread]: 
+[0m15:03:51.662263 [debug] [Thread-1 (]: Began running node model.onward_materialize.src_driver_location
+[0m15:03:51.662734 [info ] [Thread-1 (]: 1 of 2 START sql source model public.src_driver_location ....................... [RUN]
+[0m15:03:51.663784 [debug] [Thread-1 (]: Acquiring new materialize connection "model.onward_materialize.src_driver_location"
+[0m15:03:51.663998 [debug] [Thread-1 (]: Began compiling node model.onward_materialize.src_driver_location
+[0m15:03:51.664225 [debug] [Thread-1 (]: Compiling model.onward_materialize.src_driver_location
+[0m15:03:51.668639 [debug] [Thread-1 (]: Writing injected SQL for node "model.onward_materialize.src_driver_location"
+[0m15:03:51.669581 [debug] [Thread-1 (]: finished collecting timing info
+[0m15:03:51.669783 [debug] [Thread-1 (]: Began executing node model.onward_materialize.src_driver_location
+[0m15:03:51.684158 [debug] [Thread-1 (]: Writing runtime sql for node "model.onward_materialize.src_driver_location"
+[0m15:03:51.684910 [debug] [Thread-1 (]: Using materialize connection "model.onward_materialize.src_driver_location"
+[0m15:03:51.685076 [debug] [Thread-1 (]: On model.onward_materialize.src_driver_location: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "node_id": "model.onward_materialize.src_driver_location"} */
+
+
+--CREATE SOURCE IF NOT EXISTS "materialize"."public"."src_driver_location"
+--  FROM KAFKA CONNECTION kafka_connection (TOPIC 'driver_location')
+--  KEY FORMAT BYTES
+--  VALUE FORMAT BYTES
+--  ENVELOPE UPSERT
+--  WITH (SIZE = '3xsmall');
+
+
+  CREATE SOURCE IF NOT EXISTS "materialize"."public"."src_driver_location"
+  FROM KAFKA CONNECTION kafka_connection (TOPIC 'driver_location')
+--  KEY FORMAT BYTES
+  VALUE FORMAT BYTES
+--  ENVELOPE UPSERT
+  WITH (SIZE = '3xsmall');
+
+
+-- where id is not null
+[0m15:03:51.685207 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:03:53.002650 [debug] [Thread-1 (]: Postgres adapter: Postgres error: Expected end of statement, found VALUE
+LINE 15:   VALUE FORMAT BYTES
+           ^
+
+[0m15:03:53.004102 [debug] [Thread-1 (]: finished collecting timing info
+[0m15:03:53.004829 [debug] [Thread-1 (]: On model.onward_materialize.src_driver_location: Close
+[0m15:03:53.006908 [debug] [Thread-1 (]: Database Error in model src_driver_location (models/sources/src_driver_location.sql)
+  Expected end of statement, found VALUE
+  LINE 15:   VALUE FORMAT BYTES
+             ^
+  compiled Code at target/run/onward_materialize/models/sources/src_driver_location.sql
+[0m15:03:53.007732 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '47f5aa6a-faef-424b-8a04-f7040fd3521d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbb8aa4ee00>]}
+[0m15:03:53.008760 [error] [Thread-1 (]: 1 of 2 ERROR creating sql source model public.src_driver_location .............. [[31mERROR[0m in 1.34s]
+[0m15:03:53.010051 [debug] [Thread-1 (]: Finished running node model.onward_materialize.src_driver_location
+[0m15:03:53.011191 [debug] [Thread-1 (]: Began running node model.onward_materialize.json_driver_location
+[0m15:03:53.011635 [info ] [Thread-1 (]: 2 of 2 SKIP relation public.json_driver_location ............................... [[33mSKIP[0m]
+[0m15:03:53.012344 [debug] [Thread-1 (]: Finished running node model.onward_materialize.json_driver_location
+[0m15:03:53.014031 [debug] [MainThread]: Acquiring new materialize connection "master"
+[0m15:03:53.014802 [info ] [MainThread]: 
+[0m15:03:53.015178 [info ] [MainThread]: Finished running 1 source model, 1 view model in 0 hours 0 minutes and 5.42 seconds (5.42s).
+[0m15:03:53.015511 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:03:53.015690 [debug] [MainThread]: Connection 'model.onward_materialize.src_driver_location' was properly closed.
+[0m15:03:53.025304 [info ] [MainThread]: 
+[0m15:03:53.025621 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m15:03:53.025885 [info ] [MainThread]: 
+[0m15:03:53.026120 [error] [MainThread]: [33mDatabase Error in model src_driver_location (models/sources/src_driver_location.sql)[0m
+[0m15:03:53.026364 [error] [MainThread]:   Expected end of statement, found VALUE
+[0m15:03:53.026589 [error] [MainThread]:   LINE 15:   VALUE FORMAT BYTES
+[0m15:03:53.026807 [error] [MainThread]:              ^
+[0m15:03:53.027023 [error] [MainThread]:   compiled Code at target/run/onward_materialize/models/sources/src_driver_location.sql
+[0m15:03:53.027248 [info ] [MainThread]: 
+[0m15:03:53.027482 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=1 TOTAL=2
+[0m15:03:53.027832 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbb8a9d3e80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbb8a9d3850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbb8aa12aa0>]}
+[0m15:03:53.028073 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2022-12-02 15:04:39.677339 | af9546c5-9bb1-47bc-b46a-2117101e4080 ==============================
+[0m15:04:39.677392 [info ] [MainThread]: Running with dbt=1.3.1
+[0m15:04:39.677883 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/claytonvanhovel/Desktop/onward-materialize-dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m15:04:39.678003 [debug] [MainThread]: Tracking: tracking
+[0m15:04:39.702129 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8f6a9056f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8f6a905e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8f6a907700>]}
+[0m15:04:39.746434 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m15:04:39.746767 [debug] [MainThread]: Partial parsing: updated file: onward_materialize://models/sources/src_driver_location.sql
+[0m15:04:39.757517 [debug] [MainThread]: 1603: static parser failed on sources/src_driver_location.sql
+[0m15:04:39.767792 [debug] [MainThread]: 1602: parser fallback to jinja rendering on sources/src_driver_location.sql
+[0m15:04:39.780405 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'af9546c5-9bb1-47bc-b46a-2117101e4080', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8f6ab200d0>]}
+[0m15:04:39.785223 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'af9546c5-9bb1-47bc-b46a-2117101e4080', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8f6aa3c910>]}
+[0m15:04:39.785428 [info ] [MainThread]: Found 2 models, 0 tests, 0 snapshots, 0 analyses, 307 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+[0m15:04:39.785594 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'af9546c5-9bb1-47bc-b46a-2117101e4080', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8f6aa597b0>]}
+[0m15:04:39.786417 [info ] [MainThread]: 
+[0m15:04:39.786806 [debug] [MainThread]: Acquiring new materialize connection "master"
+[0m15:04:39.787498 [debug] [ThreadPool]: Acquiring new materialize connection "list_materialize"
+[0m15:04:39.794878 [debug] [ThreadPool]: Using materialize connection "list_materialize"
+[0m15:04:39.795045 [debug] [ThreadPool]: On list_materialize: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "connection_name": "list_materialize"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:04:39.795139 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:04:41.245866 [debug] [ThreadPool]: SQL status: SELECT 5 in 1.45 seconds
+[0m15:04:41.252393 [debug] [ThreadPool]: On list_materialize: Close
+[0m15:04:41.255174 [debug] [ThreadPool]: Acquiring new materialize connection "list_materialize_public"
+[0m15:04:41.264582 [debug] [ThreadPool]: Using materialize connection "list_materialize_public"
+[0m15:04:41.264862 [debug] [ThreadPool]: On list_materialize_public: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "connection_name": "list_materialize_public"} */
+select
+        d.name as database,
+        s.name as schema,
+        o.name,
+        case when o.type = 'materialized-view' then 'materializedview' else o.type end as type
+    from mz_objects o
+    join mz_schemas s on o.schema_id = s.id and s.name = 'public'
+    join mz_databases d on s.database_id = d.id and d.name = 'materialize'
+    where type in ('table', 'source', 'view', 'materialized-view', 'index', 'sink')
+  
+[0m15:04:41.265041 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:04:42.602954 [debug] [ThreadPool]: SQL status: SELECT 0 in 1.34 seconds
+[0m15:04:42.609974 [debug] [ThreadPool]: On list_materialize_public: Close
+[0m15:04:42.611727 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'af9546c5-9bb1-47bc-b46a-2117101e4080', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8f6aa6fee0>]}
+[0m15:04:42.612592 [info ] [MainThread]: Concurrency: 1 threads (target='prod')
+[0m15:04:42.612900 [info ] [MainThread]: 
+[0m15:04:42.619435 [debug] [Thread-1 (]: Began running node model.onward_materialize.src_driver_location
+[0m15:04:42.619784 [info ] [Thread-1 (]: 1 of 2 START sql source model public.src_driver_location ....................... [RUN]
+[0m15:04:42.620403 [debug] [Thread-1 (]: Acquiring new materialize connection "model.onward_materialize.src_driver_location"
+[0m15:04:42.620560 [debug] [Thread-1 (]: Began compiling node model.onward_materialize.src_driver_location
+[0m15:04:42.620722 [debug] [Thread-1 (]: Compiling model.onward_materialize.src_driver_location
+[0m15:04:42.623918 [debug] [Thread-1 (]: Writing injected SQL for node "model.onward_materialize.src_driver_location"
+[0m15:04:42.624387 [debug] [Thread-1 (]: finished collecting timing info
+[0m15:04:42.624540 [debug] [Thread-1 (]: Began executing node model.onward_materialize.src_driver_location
+[0m15:04:42.636651 [debug] [Thread-1 (]: Writing runtime sql for node "model.onward_materialize.src_driver_location"
+[0m15:04:42.637189 [debug] [Thread-1 (]: Using materialize connection "model.onward_materialize.src_driver_location"
+[0m15:04:42.637303 [debug] [Thread-1 (]: On model.onward_materialize.src_driver_location: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "node_id": "model.onward_materialize.src_driver_location"} */
+
+
+--CREATE SOURCE IF NOT EXISTS "materialize"."public"."src_driver_location"
+--  FROM KAFKA CONNECTION kafka_connection (TOPIC 'driver_location')
+--  KEY FORMAT BYTES
+--  VALUE FORMAT BYTES
+--  ENVELOPE UPSERT
+--  WITH (SIZE = '3xsmall');
+
+
+  CREATE SOURCE IF NOT EXISTS "materialize"."public"."src_driver_location"
+  FROM KAFKA CONNECTION kafka_connection (TOPIC 'driver_location')
+  FORMAT BYTES
+  WITH (SIZE = '3xsmall');
+
+
+-- where id is not null
+[0m15:04:42.637403 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:04:45.033511 [debug] [Thread-1 (]: SQL status: CREATE SOURCE in 2.4 seconds
+[0m15:04:45.054476 [debug] [Thread-1 (]: finished collecting timing info
+[0m15:04:45.054912 [debug] [Thread-1 (]: On model.onward_materialize.src_driver_location: Close
+[0m15:04:45.056020 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'af9546c5-9bb1-47bc-b46a-2117101e4080', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8f6ab3d570>]}
+[0m15:04:45.056513 [info ] [Thread-1 (]: 1 of 2 OK created sql source model public.src_driver_location .................. [[32mCREATE SOURCE[0m in 2.44s]
+[0m15:04:45.057409 [debug] [Thread-1 (]: Finished running node model.onward_materialize.src_driver_location
+[0m15:04:45.058074 [debug] [Thread-1 (]: Began running node model.onward_materialize.json_driver_location
+[0m15:04:45.058553 [info ] [Thread-1 (]: 2 of 2 START sql view model public.json_driver_location ........................ [RUN]
+[0m15:04:45.059119 [debug] [Thread-1 (]: Acquiring new materialize connection "model.onward_materialize.json_driver_location"
+[0m15:04:45.059267 [debug] [Thread-1 (]: Began compiling node model.onward_materialize.json_driver_location
+[0m15:04:45.059409 [debug] [Thread-1 (]: Compiling model.onward_materialize.json_driver_location
+[0m15:04:45.062414 [debug] [Thread-1 (]: Writing injected SQL for node "model.onward_materialize.json_driver_location"
+[0m15:04:45.063389 [debug] [Thread-1 (]: finished collecting timing info
+[0m15:04:45.063575 [debug] [Thread-1 (]: Began executing node model.onward_materialize.json_driver_location
+[0m15:04:45.071994 [debug] [Thread-1 (]: Writing runtime sql for node "model.onward_materialize.json_driver_location"
+[0m15:04:45.072647 [debug] [Thread-1 (]: Using materialize connection "model.onward_materialize.json_driver_location"
+[0m15:04:45.072777 [debug] [Thread-1 (]: On model.onward_materialize.json_driver_location: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "node_id": "model.onward_materialize.json_driver_location"} */
+create view "materialize"."public"."json_driver_location"
+  as (
+    SELECT
+    CONVERT_FROM(key, 'utf8') as key,
+    data->>'uid' AS uid,
+    to_timestamp(cast(data->>'timestamp' as double)) AS timestamp,
+    data->>'latitude' AS latitude,
+    data->>'longitude' AS longitude,
+    data->>'speed' AS speed
+  FROM (SELECT key, CONVERT_FROM(data, 'utf8')::jsonb AS data FROM "materialize"."public"."src_driver_location")
+  );
+[0m15:04:45.072887 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:04:46.398744 [debug] [Thread-1 (]: Postgres adapter: Postgres error: column "key" does not exist
+
+[0m15:04:46.400998 [debug] [Thread-1 (]: finished collecting timing info
+[0m15:04:46.401700 [debug] [Thread-1 (]: On model.onward_materialize.json_driver_location: Close
+[0m15:04:46.403754 [debug] [Thread-1 (]: Database Error in model json_driver_location (models/materializedviews/json_driver_location.sql)
+  column "key" does not exist
+  compiled Code at target/run/onward_materialize/models/materializedviews/json_driver_location.sql
+[0m15:04:46.404508 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'af9546c5-9bb1-47bc-b46a-2117101e4080', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8f6abad420>]}
+[0m15:04:46.405248 [error] [Thread-1 (]: 2 of 2 ERROR creating sql view model public.json_driver_location ............... [[31mERROR[0m in 1.35s]
+[0m15:04:46.406008 [debug] [Thread-1 (]: Finished running node model.onward_materialize.json_driver_location
+[0m15:04:46.408046 [debug] [MainThread]: Acquiring new materialize connection "master"
+[0m15:04:46.408871 [info ] [MainThread]: 
+[0m15:04:46.409263 [info ] [MainThread]: Finished running 1 source model, 1 view model in 0 hours 0 minutes and 6.62 seconds (6.62s).
+[0m15:04:46.409613 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:04:46.409790 [debug] [MainThread]: Connection 'model.onward_materialize.json_driver_location' was properly closed.
+[0m15:04:46.419274 [info ] [MainThread]: 
+[0m15:04:46.419620 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m15:04:46.419921 [info ] [MainThread]: 
+[0m15:04:46.420164 [error] [MainThread]: [33mDatabase Error in model json_driver_location (models/materializedviews/json_driver_location.sql)[0m
+[0m15:04:46.420413 [error] [MainThread]:   column "key" does not exist
+[0m15:04:46.420633 [error] [MainThread]:   compiled Code at target/run/onward_materialize/models/materializedviews/json_driver_location.sql
+[0m15:04:46.420870 [info ] [MainThread]: 
+[0m15:04:46.421116 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=1 SKIP=0 TOTAL=2
+[0m15:04:46.421505 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8f6a9054b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8f6aa6ffa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8f6ab3d8a0>]}
+[0m15:04:46.421789 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2022-12-02 15:05:21.524046 | 3b0d40fb-019e-4338-b7eb-f0f63f0ded55 ==============================
+[0m15:05:21.524103 [info ] [MainThread]: Running with dbt=1.3.1
+[0m15:05:21.525080 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/claytonvanhovel/Desktop/onward-materialize-dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m15:05:21.525220 [debug] [MainThread]: Tracking: tracking
+[0m15:05:21.546907 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f89223f9e70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f89223fa500>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f89223f8e80>]}
+[0m15:05:21.591333 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m15:05:21.591679 [debug] [MainThread]: Partial parsing: updated file: onward_materialize://models/materializedviews/json_driver_location.sql
+[0m15:05:21.602547 [debug] [MainThread]: 1699: static parser successfully parsed materializedviews/json_driver_location.sql
+[0m15:05:21.625414 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3b0d40fb-019e-4338-b7eb-f0f63f0ded55', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f890095c0d0>]}
+[0m15:05:21.630014 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3b0d40fb-019e-4338-b7eb-f0f63f0ded55', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8920ba12d0>]}
+[0m15:05:21.630231 [info ] [MainThread]: Found 2 models, 0 tests, 0 snapshots, 0 analyses, 307 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+[0m15:05:21.630402 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3b0d40fb-019e-4338-b7eb-f0f63f0ded55', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f89225496f0>]}
+[0m15:05:21.631326 [info ] [MainThread]: 
+[0m15:05:21.631728 [debug] [MainThread]: Acquiring new materialize connection "master"
+[0m15:05:21.632422 [debug] [ThreadPool]: Acquiring new materialize connection "list_materialize"
+[0m15:05:21.639518 [debug] [ThreadPool]: Using materialize connection "list_materialize"
+[0m15:05:21.639673 [debug] [ThreadPool]: On list_materialize: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "connection_name": "list_materialize"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:05:21.639763 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:05:23.115498 [debug] [ThreadPool]: SQL status: SELECT 5 in 1.48 seconds
+[0m15:05:23.121748 [debug] [ThreadPool]: On list_materialize: Close
+[0m15:05:23.125657 [debug] [ThreadPool]: Acquiring new materialize connection "list_materialize_public"
+[0m15:05:23.135057 [debug] [ThreadPool]: Using materialize connection "list_materialize_public"
+[0m15:05:23.135325 [debug] [ThreadPool]: On list_materialize_public: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "connection_name": "list_materialize_public"} */
+select
+        d.name as database,
+        s.name as schema,
+        o.name,
+        case when o.type = 'materialized-view' then 'materializedview' else o.type end as type
+    from mz_objects o
+    join mz_schemas s on o.schema_id = s.id and s.name = 'public'
+    join mz_databases d on s.database_id = d.id and d.name = 'materialize'
+    where type in ('table', 'source', 'view', 'materialized-view', 'index', 'sink')
+  
+[0m15:05:23.135502 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:05:24.455742 [debug] [ThreadPool]: SQL status: SELECT 1 in 1.32 seconds
+[0m15:05:24.462805 [debug] [ThreadPool]: On list_materialize_public: Close
+[0m15:05:24.464665 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3b0d40fb-019e-4338-b7eb-f0f63f0ded55', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f89223f1600>]}
+[0m15:05:24.465645 [info ] [MainThread]: Concurrency: 1 threads (target='prod')
+[0m15:05:24.466011 [info ] [MainThread]: 
+[0m15:05:24.472589 [debug] [Thread-1 (]: Began running node model.onward_materialize.src_driver_location
+[0m15:05:24.473173 [info ] [Thread-1 (]: 1 of 2 START sql source model public.src_driver_location ....................... [RUN]
+[0m15:05:24.473877 [debug] [Thread-1 (]: Acquiring new materialize connection "model.onward_materialize.src_driver_location"
+[0m15:05:24.474063 [debug] [Thread-1 (]: Began compiling node model.onward_materialize.src_driver_location
+[0m15:05:24.474254 [debug] [Thread-1 (]: Compiling model.onward_materialize.src_driver_location
+[0m15:05:24.478072 [debug] [Thread-1 (]: Writing injected SQL for node "model.onward_materialize.src_driver_location"
+[0m15:05:24.478973 [debug] [Thread-1 (]: finished collecting timing info
+[0m15:05:24.479138 [debug] [Thread-1 (]: Began executing node model.onward_materialize.src_driver_location
+[0m15:05:24.492778 [debug] [Thread-1 (]: Using materialize connection "model.onward_materialize.src_driver_location"
+[0m15:05:24.493021 [debug] [Thread-1 (]: On model.onward_materialize.src_driver_location: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "node_id": "model.onward_materialize.src_driver_location"} */
+
+      drop source if exists "materialize"."public"."src_driver_location" cascade
+    
+[0m15:05:24.493130 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:05:25.938908 [debug] [Thread-1 (]: SQL status: DROP SOURCE in 1.45 seconds
+[0m15:05:25.953659 [debug] [Thread-1 (]: Writing runtime sql for node "model.onward_materialize.src_driver_location"
+[0m15:05:25.954784 [debug] [Thread-1 (]: Using materialize connection "model.onward_materialize.src_driver_location"
+[0m15:05:25.954955 [debug] [Thread-1 (]: On model.onward_materialize.src_driver_location: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "node_id": "model.onward_materialize.src_driver_location"} */
+
+
+--CREATE SOURCE IF NOT EXISTS "materialize"."public"."src_driver_location"
+--  FROM KAFKA CONNECTION kafka_connection (TOPIC 'driver_location')
+--  KEY FORMAT BYTES
+--  VALUE FORMAT BYTES
+--  ENVELOPE UPSERT
+--  WITH (SIZE = '3xsmall');
+
+
+  CREATE SOURCE IF NOT EXISTS "materialize"."public"."src_driver_location"
+  FROM KAFKA CONNECTION kafka_connection (TOPIC 'driver_location')
+  FORMAT BYTES
+  WITH (SIZE = '3xsmall');
+
+
+-- where id is not null
+[0m15:05:27.120585 [debug] [Thread-1 (]: SQL status: CREATE SOURCE in 1.17 seconds
+[0m15:05:27.141993 [debug] [Thread-1 (]: finished collecting timing info
+[0m15:05:27.142463 [debug] [Thread-1 (]: On model.onward_materialize.src_driver_location: Close
+[0m15:05:27.143604 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3b0d40fb-019e-4338-b7eb-f0f63f0ded55', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f89223f1600>]}
+[0m15:05:27.144100 [info ] [Thread-1 (]: 1 of 2 OK created sql source model public.src_driver_location .................. [[32mCREATE SOURCE[0m in 2.67s]
+[0m15:05:27.145140 [debug] [Thread-1 (]: Finished running node model.onward_materialize.src_driver_location
+[0m15:05:27.146113 [debug] [Thread-1 (]: Began running node model.onward_materialize.json_driver_location
+[0m15:05:27.146435 [info ] [Thread-1 (]: 2 of 2 START sql view model public.json_driver_location ........................ [RUN]
+[0m15:05:27.147156 [debug] [Thread-1 (]: Acquiring new materialize connection "model.onward_materialize.json_driver_location"
+[0m15:05:27.147331 [debug] [Thread-1 (]: Began compiling node model.onward_materialize.json_driver_location
+[0m15:05:27.147500 [debug] [Thread-1 (]: Compiling model.onward_materialize.json_driver_location
+[0m15:05:27.151416 [debug] [Thread-1 (]: Writing injected SQL for node "model.onward_materialize.json_driver_location"
+[0m15:05:27.153450 [debug] [Thread-1 (]: finished collecting timing info
+[0m15:05:27.153646 [debug] [Thread-1 (]: Began executing node model.onward_materialize.json_driver_location
+[0m15:05:27.163212 [debug] [Thread-1 (]: Writing runtime sql for node "model.onward_materialize.json_driver_location"
+[0m15:05:27.164280 [debug] [Thread-1 (]: Using materialize connection "model.onward_materialize.json_driver_location"
+[0m15:05:27.164424 [debug] [Thread-1 (]: On model.onward_materialize.json_driver_location: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "node_id": "model.onward_materialize.json_driver_location"} */
+create view "materialize"."public"."json_driver_location"
+  as (
+    --SELECT
+--    CONVERT_FROM(key, 'utf8') as key,
+--    data->>'uid' AS uid,
+--    to_timestamp(cast(data->>'timestamp' as double)) AS timestamp,
+--    data->>'latitude' AS latitude,
+--    data->>'longitude' AS longitude,
+--    data->>'speed' AS speed
+--  FROM (SELECT key, CONVERT_FROM(data, 'utf8')::jsonb AS data FROM "materialize"."public"."src_driver_location")
+
+
+ SELECT
+    data->>'uid' AS uid,
+    to_timestamp(cast(data->>'timestamp' as double)) AS timestamp,
+    data->>'latitude' AS latitude,
+    data->>'longitude' AS longitude,
+    data->>'speed' AS speed
+  FROM (SELECT CONVERT_FROM(data, 'utf8')::jsonb AS data FROM "materialize"."public"."src_driver_location")
+  );
+[0m15:05:27.164536 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:05:28.578686 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 1.41 seconds
+[0m15:05:28.587348 [debug] [Thread-1 (]: finished collecting timing info
+[0m15:05:28.587865 [debug] [Thread-1 (]: On model.onward_materialize.json_driver_location: Close
+[0m15:05:28.589095 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3b0d40fb-019e-4338-b7eb-f0f63f0ded55', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8900a0cf40>]}
+[0m15:05:28.589712 [info ] [Thread-1 (]: 2 of 2 OK created sql view model public.json_driver_location ................... [[32mCREATE VIEW[0m in 1.44s]
+[0m15:05:28.590349 [debug] [Thread-1 (]: Finished running node model.onward_materialize.json_driver_location
+[0m15:05:28.592309 [debug] [MainThread]: Acquiring new materialize connection "master"
+[0m15:05:28.593200 [info ] [MainThread]: 
+[0m15:05:28.593571 [info ] [MainThread]: Finished running 1 source model, 1 view model in 0 hours 0 minutes and 6.96 seconds (6.96s).
+[0m15:05:28.593886 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:05:28.594038 [debug] [MainThread]: Connection 'model.onward_materialize.json_driver_location' was properly closed.
+[0m15:05:28.604465 [info ] [MainThread]: 
+[0m15:05:28.604806 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:05:28.605084 [info ] [MainThread]: 
+[0m15:05:28.605313 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m15:05:28.605608 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8900987070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f89009ef460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f89009ee9e0>]}
+[0m15:05:28.605831 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2022-12-02 15:07:56.459782 | 9364c8a4-a059-4b04-bd0b-9072fb987c3f ==============================
+[0m15:07:56.459854 [info ] [MainThread]: Running with dbt=1.3.1
+[0m15:07:56.460579 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/claytonvanhovel/Desktop/onward-materialize-dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m15:07:56.460717 [debug] [MainThread]: Tracking: tracking
+[0m15:07:56.481976 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd432b39b40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd432b3a1d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd432b38b50>]}
+[0m15:07:56.526471 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m15:07:56.526802 [debug] [MainThread]: Partial parsing: updated file: onward_materialize://models/materializedviews/json_driver_location.sql
+[0m15:07:56.536921 [debug] [MainThread]: 1699: static parser successfully parsed materializedviews/json_driver_location.sql
+[0m15:07:56.558532 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '9364c8a4-a059-4b04-bd0b-9072fb987c3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd432c3c0d0>]}
+[0m15:07:56.563183 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '9364c8a4-a059-4b04-bd0b-9072fb987c3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd4312392d0>]}
+[0m15:07:56.563375 [info ] [MainThread]: Found 2 models, 0 tests, 0 snapshots, 0 analyses, 307 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+[0m15:07:56.563547 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9364c8a4-a059-4b04-bd0b-9072fb987c3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd4207396f0>]}
+[0m15:07:56.564396 [info ] [MainThread]: 
+[0m15:07:56.564786 [debug] [MainThread]: Acquiring new materialize connection "master"
+[0m15:07:56.565453 [debug] [ThreadPool]: Acquiring new materialize connection "list_materialize"
+[0m15:07:56.572897 [debug] [ThreadPool]: Using materialize connection "list_materialize"
+[0m15:07:56.573065 [debug] [ThreadPool]: On list_materialize: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "connection_name": "list_materialize"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:07:56.573158 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:07:58.370640 [debug] [ThreadPool]: SQL status: SELECT 5 in 1.8 seconds
+[0m15:07:58.374876 [debug] [ThreadPool]: On list_materialize: Close
+[0m15:07:58.380497 [debug] [ThreadPool]: Acquiring new materialize connection "list_materialize_public"
+[0m15:07:58.390503 [debug] [ThreadPool]: Using materialize connection "list_materialize_public"
+[0m15:07:58.390919 [debug] [ThreadPool]: On list_materialize_public: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "connection_name": "list_materialize_public"} */
+select
+        d.name as database,
+        s.name as schema,
+        o.name,
+        case when o.type = 'materialized-view' then 'materializedview' else o.type end as type
+    from mz_objects o
+    join mz_schemas s on o.schema_id = s.id and s.name = 'public'
+    join mz_databases d on s.database_id = d.id and d.name = 'materialize'
+    where type in ('table', 'source', 'view', 'materialized-view', 'index', 'sink')
+  
+[0m15:07:58.391130 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:07:59.811572 [debug] [ThreadPool]: SQL status: SELECT 2 in 1.42 seconds
+[0m15:07:59.817186 [debug] [ThreadPool]: On list_materialize_public: Close
+[0m15:07:59.818893 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9364c8a4-a059-4b04-bd0b-9072fb987c3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd432b31600>]}
+[0m15:07:59.820067 [info ] [MainThread]: Concurrency: 1 threads (target='prod')
+[0m15:07:59.820552 [info ] [MainThread]: 
+[0m15:07:59.828212 [debug] [Thread-1 (]: Began running node model.onward_materialize.src_driver_location
+[0m15:07:59.828976 [info ] [Thread-1 (]: 1 of 2 START sql source model public.src_driver_location ....................... [RUN]
+[0m15:07:59.829875 [debug] [Thread-1 (]: Acquiring new materialize connection "model.onward_materialize.src_driver_location"
+[0m15:07:59.830116 [debug] [Thread-1 (]: Began compiling node model.onward_materialize.src_driver_location
+[0m15:07:59.830374 [debug] [Thread-1 (]: Compiling model.onward_materialize.src_driver_location
+[0m15:07:59.834853 [debug] [Thread-1 (]: Writing injected SQL for node "model.onward_materialize.src_driver_location"
+[0m15:07:59.835635 [debug] [Thread-1 (]: finished collecting timing info
+[0m15:07:59.835847 [debug] [Thread-1 (]: Began executing node model.onward_materialize.src_driver_location
+[0m15:07:59.851421 [debug] [Thread-1 (]: Using materialize connection "model.onward_materialize.src_driver_location"
+[0m15:07:59.851655 [debug] [Thread-1 (]: On model.onward_materialize.src_driver_location: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "node_id": "model.onward_materialize.src_driver_location"} */
+
+      drop source if exists "materialize"."public"."src_driver_location" cascade
+    
+[0m15:07:59.851783 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:08:01.428902 [debug] [Thread-1 (]: SQL status: DROP SOURCE in 1.58 seconds
+[0m15:08:01.444737 [debug] [Thread-1 (]: Writing runtime sql for node "model.onward_materialize.src_driver_location"
+[0m15:08:01.445851 [debug] [Thread-1 (]: Using materialize connection "model.onward_materialize.src_driver_location"
+[0m15:08:01.446042 [debug] [Thread-1 (]: On model.onward_materialize.src_driver_location: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "node_id": "model.onward_materialize.src_driver_location"} */
+
+
+--CREATE SOURCE IF NOT EXISTS "materialize"."public"."src_driver_location"
+--  FROM KAFKA CONNECTION kafka_connection (TOPIC 'driver_location')
+--  KEY FORMAT BYTES
+--  VALUE FORMAT BYTES
+--  ENVELOPE UPSERT
+--  WITH (SIZE = '3xsmall');
+
+
+  CREATE SOURCE IF NOT EXISTS "materialize"."public"."src_driver_location"
+  FROM KAFKA CONNECTION kafka_connection (TOPIC 'driver_location')
+  FORMAT BYTES
+  WITH (SIZE = '3xsmall');
+
+
+-- where id is not null
+[0m15:08:02.551755 [debug] [Thread-1 (]: SQL status: CREATE SOURCE in 1.11 seconds
+[0m15:08:02.573078 [debug] [Thread-1 (]: finished collecting timing info
+[0m15:08:02.573538 [debug] [Thread-1 (]: On model.onward_materialize.src_driver_location: Close
+[0m15:08:02.574739 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9364c8a4-a059-4b04-bd0b-9072fb987c3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd432b31600>]}
+[0m15:08:02.575300 [info ] [Thread-1 (]: 1 of 2 OK created sql source model public.src_driver_location .................. [[32mCREATE SOURCE[0m in 2.75s]
+[0m15:08:02.576292 [debug] [Thread-1 (]: Finished running node model.onward_materialize.src_driver_location
+[0m15:08:02.577228 [debug] [Thread-1 (]: Began running node model.onward_materialize.json_driver_location
+[0m15:08:02.577554 [info ] [Thread-1 (]: 2 of 2 START sql view model public.json_driver_location ........................ [RUN]
+[0m15:08:02.578259 [debug] [Thread-1 (]: Acquiring new materialize connection "model.onward_materialize.json_driver_location"
+[0m15:08:02.578440 [debug] [Thread-1 (]: Began compiling node model.onward_materialize.json_driver_location
+[0m15:08:02.578607 [debug] [Thread-1 (]: Compiling model.onward_materialize.json_driver_location
+[0m15:08:02.582277 [debug] [Thread-1 (]: Writing injected SQL for node "model.onward_materialize.json_driver_location"
+[0m15:08:02.583039 [debug] [Thread-1 (]: finished collecting timing info
+[0m15:08:02.583199 [debug] [Thread-1 (]: Began executing node model.onward_materialize.json_driver_location
+[0m15:08:02.592419 [debug] [Thread-1 (]: Using materialize connection "model.onward_materialize.json_driver_location"
+[0m15:08:02.592560 [debug] [Thread-1 (]: On model.onward_materialize.json_driver_location: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "node_id": "model.onward_materialize.json_driver_location"} */
+
+      drop view if exists "materialize"."public"."json_driver_location" cascade
+    
+[0m15:08:02.592672 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:08:03.908389 [debug] [Thread-1 (]: SQL status: DROP VIEW in 1.32 seconds
+[0m15:08:03.916395 [debug] [Thread-1 (]: Writing runtime sql for node "model.onward_materialize.json_driver_location"
+[0m15:08:03.917785 [debug] [Thread-1 (]: Using materialize connection "model.onward_materialize.json_driver_location"
+[0m15:08:03.918058 [debug] [Thread-1 (]: On model.onward_materialize.json_driver_location: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "node_id": "model.onward_materialize.json_driver_location"} */
+create view "materialize"."public"."json_driver_location"
+  as (
+    --SELECT
+--    CONVERT_FROM(key, 'utf8') as key,
+--    data->>'uid' AS uid,
+--    to_timestamp(cast(data->>'timestamp' as double)) AS timestamp,
+--    data->>'latitude' AS latitude,
+--    data->>'longitude' AS longitude,
+--    data->>'speed' AS speed
+--  FROM (SELECT key, CONVERT_FROM(data, 'utf8')::jsonb AS data FROM "materialize"."public"."src_driver_location")
+
+
+ SELECT
+    data->>'uid' AS uid,
+    to_timestamp(cast(data->>'timestamp' as double)) AS timestamp,
+    data->>'latitude' AS latitude,
+    data->>'longitude' AS longitude,
+    data->>'speed' AS speed,
+    data->>'routeNumber' as routeNumber
+  FROM (SELECT CONVERT_FROM(data, 'utf8')::jsonb AS data FROM "materialize"."public"."src_driver_location")
+  );
+[0m15:08:04.139105 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.22 seconds
+[0m15:08:04.141571 [debug] [Thread-1 (]: finished collecting timing info
+[0m15:08:04.141765 [debug] [Thread-1 (]: On model.onward_materialize.json_driver_location: Close
+[0m15:08:04.142476 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9364c8a4-a059-4b04-bd0b-9072fb987c3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd432d00eb0>]}
+[0m15:08:04.143220 [info ] [Thread-1 (]: 2 of 2 OK created sql view model public.json_driver_location ................... [[32mCREATE VIEW[0m in 1.56s]
+[0m15:08:04.143920 [debug] [Thread-1 (]: Finished running node model.onward_materialize.json_driver_location
+[0m15:08:04.145827 [debug] [MainThread]: Acquiring new materialize connection "master"
+[0m15:08:04.147134 [info ] [MainThread]: 
+[0m15:08:04.147612 [info ] [MainThread]: Finished running 1 source model, 1 view model in 0 hours 0 minutes and 7.58 seconds (7.58s).
+[0m15:08:04.147968 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:08:04.148163 [debug] [MainThread]: Connection 'model.onward_materialize.json_driver_location' was properly closed.
+[0m15:08:04.160316 [info ] [MainThread]: 
+[0m15:08:04.160684 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:08:04.160980 [info ] [MainThread]: 
+[0m15:08:04.161244 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m15:08:04.161673 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd432cce2c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd432cce980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd432ccdcf0>]}
+[0m15:08:04.161983 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2022-12-02 15:13:38.806878 | 468ab031-069c-4e39-938f-e0d8db5ce013 ==============================
+[0m15:13:38.806950 [info ] [MainThread]: Running with dbt=1.3.1
+[0m15:13:38.807680 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/claytonvanhovel/Desktop/onward-materialize-dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m15:13:38.807831 [debug] [MainThread]: Tracking: tracking
+[0m15:13:38.831822 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbcfa839b40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbcfa83a1d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbcfa838b50>]}
+[0m15:13:38.876984 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m15:13:38.877314 [debug] [MainThread]: Partial parsing: updated file: onward_materialize://models/materializedviews/json_driver_location.sql
+[0m15:13:38.887380 [debug] [MainThread]: 1699: static parser successfully parsed materializedviews/json_driver_location.sql
+[0m15:13:38.908469 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '468ab031-069c-4e39-938f-e0d8db5ce013', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbcd87c40d0>]}
+[0m15:13:38.912897 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '468ab031-069c-4e39-938f-e0d8db5ce013', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbcf8f392d0>]}
+[0m15:13:38.913082 [info ] [MainThread]: Found 2 models, 0 tests, 0 snapshots, 0 analyses, 307 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+[0m15:13:38.913254 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '468ab031-069c-4e39-938f-e0d8db5ce013', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbcd87116f0>]}
+[0m15:13:38.914094 [info ] [MainThread]: 
+[0m15:13:38.914481 [debug] [MainThread]: Acquiring new materialize connection "master"
+[0m15:13:38.915145 [debug] [ThreadPool]: Acquiring new materialize connection "list_materialize"
+[0m15:13:38.922615 [debug] [ThreadPool]: Using materialize connection "list_materialize"
+[0m15:13:38.922806 [debug] [ThreadPool]: On list_materialize: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "connection_name": "list_materialize"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:13:38.922906 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:13:40.375132 [debug] [ThreadPool]: SQL status: SELECT 5 in 1.45 seconds
+[0m15:13:40.383098 [debug] [ThreadPool]: On list_materialize: Close
+[0m15:13:40.385679 [debug] [ThreadPool]: Acquiring new materialize connection "list_materialize_public"
+[0m15:13:40.392448 [debug] [ThreadPool]: Using materialize connection "list_materialize_public"
+[0m15:13:40.392612 [debug] [ThreadPool]: On list_materialize_public: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "connection_name": "list_materialize_public"} */
+select
+        d.name as database,
+        s.name as schema,
+        o.name,
+        case when o.type = 'materialized-view' then 'materializedview' else o.type end as type
+    from mz_objects o
+    join mz_schemas s on o.schema_id = s.id and s.name = 'public'
+    join mz_databases d on s.database_id = d.id and d.name = 'materialize'
+    where type in ('table', 'source', 'view', 'materialized-view', 'index', 'sink')
+  
+[0m15:13:40.392734 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:13:41.770369 [debug] [ThreadPool]: SQL status: SELECT 2 in 1.38 seconds
+[0m15:13:41.777122 [debug] [ThreadPool]: On list_materialize_public: Close
+[0m15:13:41.778963 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '468ab031-069c-4e39-938f-e0d8db5ce013', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbcd87eef50>]}
+[0m15:13:41.779968 [info ] [MainThread]: Concurrency: 1 threads (target='prod')
+[0m15:13:41.780361 [info ] [MainThread]: 
+[0m15:13:41.787039 [debug] [Thread-1 (]: Began running node model.onward_materialize.src_driver_location
+[0m15:13:41.787755 [info ] [Thread-1 (]: 1 of 2 START sql source model public.src_driver_location ....................... [RUN]
+[0m15:13:41.788542 [debug] [Thread-1 (]: Acquiring new materialize connection "model.onward_materialize.src_driver_location"
+[0m15:13:41.788749 [debug] [Thread-1 (]: Began compiling node model.onward_materialize.src_driver_location
+[0m15:13:41.788967 [debug] [Thread-1 (]: Compiling model.onward_materialize.src_driver_location
+[0m15:13:41.792896 [debug] [Thread-1 (]: Writing injected SQL for node "model.onward_materialize.src_driver_location"
+[0m15:13:41.793344 [debug] [Thread-1 (]: finished collecting timing info
+[0m15:13:41.793500 [debug] [Thread-1 (]: Began executing node model.onward_materialize.src_driver_location
+[0m15:13:41.806868 [debug] [Thread-1 (]: Using materialize connection "model.onward_materialize.src_driver_location"
+[0m15:13:41.807127 [debug] [Thread-1 (]: On model.onward_materialize.src_driver_location: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "node_id": "model.onward_materialize.src_driver_location"} */
+
+      drop source if exists "materialize"."public"."src_driver_location" cascade
+    
+[0m15:13:41.807249 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:13:43.261559 [debug] [Thread-1 (]: SQL status: DROP SOURCE in 1.45 seconds
+[0m15:13:43.278616 [debug] [Thread-1 (]: Writing runtime sql for node "model.onward_materialize.src_driver_location"
+[0m15:13:43.279937 [debug] [Thread-1 (]: Using materialize connection "model.onward_materialize.src_driver_location"
+[0m15:13:43.280136 [debug] [Thread-1 (]: On model.onward_materialize.src_driver_location: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "node_id": "model.onward_materialize.src_driver_location"} */
+
+
+--CREATE SOURCE IF NOT EXISTS "materialize"."public"."src_driver_location"
+--  FROM KAFKA CONNECTION kafka_connection (TOPIC 'driver_location')
+--  KEY FORMAT BYTES
+--  VALUE FORMAT BYTES
+--  ENVELOPE UPSERT
+--  WITH (SIZE = '3xsmall');
+
+
+  CREATE SOURCE IF NOT EXISTS "materialize"."public"."src_driver_location"
+  FROM KAFKA CONNECTION kafka_connection (TOPIC 'driver_location')
+  FORMAT BYTES
+  WITH (SIZE = '3xsmall');
+
+
+-- where id is not null
+[0m15:13:44.385067 [debug] [Thread-1 (]: SQL status: CREATE SOURCE in 1.1 seconds
+[0m15:13:44.406767 [debug] [Thread-1 (]: finished collecting timing info
+[0m15:13:44.407200 [debug] [Thread-1 (]: On model.onward_materialize.src_driver_location: Close
+[0m15:13:44.408303 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '468ab031-069c-4e39-938f-e0d8db5ce013', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbcd87eef50>]}
+[0m15:13:44.408821 [info ] [Thread-1 (]: 1 of 2 OK created sql source model public.src_driver_location .................. [[32mCREATE SOURCE[0m in 2.62s]
+[0m15:13:44.409813 [debug] [Thread-1 (]: Finished running node model.onward_materialize.src_driver_location
+[0m15:13:44.410786 [debug] [Thread-1 (]: Began running node model.onward_materialize.json_driver_location
+[0m15:13:44.411095 [info ] [Thread-1 (]: 2 of 2 START sql view model public.json_driver_location ........................ [RUN]
+[0m15:13:44.411762 [debug] [Thread-1 (]: Acquiring new materialize connection "model.onward_materialize.json_driver_location"
+[0m15:13:44.411938 [debug] [Thread-1 (]: Began compiling node model.onward_materialize.json_driver_location
+[0m15:13:44.412100 [debug] [Thread-1 (]: Compiling model.onward_materialize.json_driver_location
+[0m15:13:44.415993 [debug] [Thread-1 (]: Writing injected SQL for node "model.onward_materialize.json_driver_location"
+[0m15:13:44.416692 [debug] [Thread-1 (]: finished collecting timing info
+[0m15:13:44.416850 [debug] [Thread-1 (]: Began executing node model.onward_materialize.json_driver_location
+[0m15:13:44.426926 [debug] [Thread-1 (]: Using materialize connection "model.onward_materialize.json_driver_location"
+[0m15:13:44.427160 [debug] [Thread-1 (]: On model.onward_materialize.json_driver_location: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "node_id": "model.onward_materialize.json_driver_location"} */
+
+      drop view if exists "materialize"."public"."json_driver_location" cascade
+    
+[0m15:13:44.427295 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:13:45.846713 [debug] [Thread-1 (]: SQL status: DROP VIEW in 1.42 seconds
+[0m15:13:45.852869 [debug] [Thread-1 (]: Writing runtime sql for node "model.onward_materialize.json_driver_location"
+[0m15:13:45.854014 [debug] [Thread-1 (]: Using materialize connection "model.onward_materialize.json_driver_location"
+[0m15:13:45.854297 [debug] [Thread-1 (]: On model.onward_materialize.json_driver_location: /* {"app": "dbt", "dbt_version": "1.3.1", "profile_name": "default", "target_name": "prod", "node_id": "model.onward_materialize.json_driver_location"} */
+create view "materialize"."public"."json_driver_location"
+  as (
+    --SELECT
+--    CONVERT_FROM(key, 'utf8') as key,
+--    data->>'uid' AS uid,
+--    to_timestamp(cast(data->>'timestamp' as double)) AS timestamp,
+--    data->>'latitude' AS latitude,
+--    data->>'longitude' AS longitude,
+--    data->>'speed' AS speed
+--  FROM (SELECT key, CONVERT_FROM(data, 'utf8')::jsonb AS data FROM "materialize"."public"."src_driver_location")
+
+
+ SELECT
+    data->>'uid' AS uid,
+    to_timestamp(cast(data->>'timestamp' as double)) AS timestamp,
+    data->>'latitude' AS latitude,
+    data->>'longitude' AS longitude,
+    data->>'speed' AS speed,
+    data->>'routeNumber' as routeNumber,
+    data->>'routeKey' as routeKey
+  FROM (SELECT CONVERT_FROM(data, 'utf8')::jsonb AS data FROM "materialize"."public"."src_driver_location")
+  );
+[0m15:13:46.100264 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.25 seconds
+[0m15:13:46.108901 [debug] [Thread-1 (]: finished collecting timing info
+[0m15:13:46.109233 [debug] [Thread-1 (]: On model.onward_materialize.json_driver_location: Close
+[0m15:13:46.110265 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '468ab031-069c-4e39-938f-e0d8db5ce013', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbcd8884eb0>]}
+[0m15:13:46.110749 [info ] [Thread-1 (]: 2 of 2 OK created sql view model public.json_driver_location ................... [[32mCREATE VIEW[0m in 1.70s]
+[0m15:13:46.111267 [debug] [Thread-1 (]: Finished running node model.onward_materialize.json_driver_location
+[0m15:13:46.112762 [debug] [MainThread]: Acquiring new materialize connection "master"
+[0m15:13:46.113355 [info ] [MainThread]: 
+[0m15:13:46.113625 [info ] [MainThread]: Finished running 1 source model, 1 view model in 0 hours 0 minutes and 7.20 seconds (7.20s).
+[0m15:13:46.113864 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:13:46.113981 [debug] [MainThread]: Connection 'model.onward_materialize.json_driver_location' was properly closed.
+[0m15:13:46.122508 [info ] [MainThread]: 
+[0m15:13:46.122772 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:13:46.122986 [info ] [MainThread]: 
+[0m15:13:46.123174 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m15:13:46.123433 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbcd8855b70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbcd8857430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbcd88553c0>]}
+[0m15:13:46.123627 [debug] [MainThread]: Flushing usage events
