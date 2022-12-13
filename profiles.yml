@@ -4,10 +4,10 @@ default:
     prod:
       type: materialize
       threads: 1
-      host: 
+      host: aisk7vdkbxzboe1imqxvttwtf.us-east-1.aws.materialize.cloud
       port: 6875
-      user: 
-      pass: 
+      user: clayton.vanhovel@onwarddelivery.com
+      pass: mzp_a76c9028c67c4fc8806d42ad6597bbcc03c2ee683fea4fb1b608b7ac1e183a09
       database: materialize
       schema: public
       # optionally use the cluster connection

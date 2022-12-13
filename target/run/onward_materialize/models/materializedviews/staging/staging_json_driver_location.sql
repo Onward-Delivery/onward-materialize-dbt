@@ -1,4 +1,4 @@
-create view "materialize"."public"."json_driver_location"
+create view "materialize"."public"."staging_json_driver_location"
   as (
     --SELECT
 --    CONVERT_FROM(key, 'utf8') as key,
@@ -19,6 +19,6 @@ create view "materialize"."public"."json_driver_location"
     data->>'speed' AS speed,
     data->>'routeNumber' as routeNumber,
     data->>'routeKey' as routeKey
-  FROM (SELECT CONVERT_FROM(key, 'utf8') as key, CONVERT_FROM(data, 'utf8')::jsonb AS data FROM "materialize"."public"."src_driver_location")
+  FROM (SELECT CONVERT_FROM(key, 'utf8') as key, CONVERT_FROM(data, 'utf8')::jsonb AS data FROM "materialize"."public"."staging_src_driver_location")
   where data->>'routeKey' is not null
   );
