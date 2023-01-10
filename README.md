@@ -8,16 +8,18 @@ You will be prompted to enter a password. Find that password from Clayton or cre
 You should now be in a Materialize session in your terminal. Some commands you could run to explore the db. (Can also explore the db using the dbt docs commands in the above section)
 
 ```show connections;```
-- Connections are connections to another system like postgres or kafka (this is where we connect to our serverless kafka, Upstash)
+- List Connections avaliable. Connections are connections to another system like postgres or kafka (this is where we connect to our serverless kafka, Upstash)
 
 ```show sources;```
-- Sources are the first step of querying a connection. This is the first portion of the process where data is exposed
+- List Sources available. Sources are the first step of querying a connection. This is the first portion of the process where data is exposed
 
 ```show materialized views;```
-- Materialized Views are updated as new data comes in. This is what we are using for real time driver location
+- List Materialized views available. Materialized Views are updated as new data comes in. This is what we are using for real time driver location
 
 ```show views;```
-- Views are only updated when queried
+- List Views available. Views are only updated when queried
+
+you can then 
 
 
 
