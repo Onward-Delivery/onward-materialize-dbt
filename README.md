@@ -24,6 +24,9 @@ you can then execute queries like normal SQL
 ```select * from json_driver_location;```
 
 
+More detailed functionality about Materialize can be found on their docs here:
+https://materialize.com/docs/
+
 
 ## Making Changes to the SQL / Tables powering Materialize
 Steps to view this locally and deploy changes. Feel free to ask Clayton any questions on this
