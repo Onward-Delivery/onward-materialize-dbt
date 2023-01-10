@@ -19,7 +19,9 @@ You should now be in a Materialize session in your terminal. Some commands you c
 ```show views;```
 - List Views available. Views are only updated when queried
 
-you can then 
+you can then execute queries like normal SQL
+
+```select * from json_driver_location;```
 
 
 
