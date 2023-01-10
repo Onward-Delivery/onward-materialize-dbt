@@ -12,9 +12,9 @@ Steps to view this locally and deploy changes. Feel free to ask Clayton any ques
 10. push changes back to remote branch
 
 
-To query the materialize database enter the following in a terminal that has pSQL installed
+To query the materialize database go to the materialize UI (https://cloud.materialize.com/) where you will find a connection string/command for your user under the section labeled 'Connect'. In a terminal that has pSQL installed enter the command. SHould look something like this. 
 
-```psql "postgres://clayton.vanhovel%40onwarddelivery.com@aisk7vdkbxzboe1imqxvttwtf.us-east-1.aws.materialize.cloud:6875/materialize"```
+```psql "postgres://{user_email}@aisk7vdkbxzboe1imqxvttwtf.us-east-1.aws.materialize.cloud:6875/materialize"```
 
 You will be prompted to enter a password. Find that password from Clayton or create a new password in the Materialize UI and enter it here.
 
