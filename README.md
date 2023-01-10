@@ -21,7 +21,7 @@ You should now be in a Materialize session in your terminal. Some commands you c
 
 
 
-## Making Changes
+## Making Changes to the SQL / Tables powering Materialize
 Steps to view this locally and deploy changes. Feel free to ask Clayton any questions on this
 
 1. Setup Python environment
